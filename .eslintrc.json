@@ -1,0 +1,89 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    // "airbnb-base",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/strict",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jsx-a11y", "@typescript-eslint", "react-hooks"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80
+      }
+    ],
+    "no-var": "error",
+    "brace-style": "error",
+    "prefer-template": "error",
+    "radix": "error",
+    "space-before-blocks": "error",
+    "import/prefer-default-export": "off",
+    "no-console": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "jsx-a11y/no-static-element-interactions": [
+      "off",
+      {
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
+      }
+    ],
+    "lit-a11y/click-events-have-key-events": 0,
+    "@typescript-eslint/no-empty-interface": [
+      "warn",
+      {
+        "allowSingleExtends": true
+      }
+    ],
+    "jsx-a11y/label-has-for": "off",
+    "react/display-name": "off",
+    "no-irregular-whitespace": [
+      "error",
+      {
+        "skipTemplates": true
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+    // "jsx-a11y/anchor-is-valid": [
+    //   "error",
+    //   {
+    //     "components": ["Link"],
+    //     "specialLink": ["hrefLeft", "hrefRight"],
+    //     "aspects": ["noHref", "invalidHref", "preferButton"]
+    //   }
+    // ]
+    // "simple-import-sort/imports": "error"
+    // "simple-import-sort/exports": "error"
+    // "unused-imports/no-unused-imports": "error"
+    // "unused-imports/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+  }
+}
