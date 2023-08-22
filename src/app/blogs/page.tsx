@@ -6,18 +6,22 @@ export const metadata: Metadata = {
   description: 'Welcome to my portfolio page!',
 };
 
+const DATA = [
+  { name: 'chocopie', age: 30, des: 'ăn theo cách của bạn' },
+  { name: 'Sizuka', age: 20, des: 'CON NGƯỜI TÔI YÊU LÀ 1 CON NGƯỜI' },
+];
+
 const Portfolio = () => (
   <>
-    <p>
-      Welcome to my portfolio page! Here you will find a carefully curated
-      collection of my work and accomplishments. Through this portfolio,
-      I&apos;m to showcase my expertise, creativity, and the value I can bring
-      to your projects.
-    </p>
+    <p>Chào mừng bạn đến với vuông quốc HADICAP</p>
 
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-      {Array.from(Array(6).keys()).map((elt) => (
-        <Link className="border-none" key={elt} href={`/blogs/${elt}`}>
+      {DATA.map((person, index) => (
+        <Link
+          className="border-none"
+          key={index}
+          href={`/blogs/${person?.name}`}
+        >
           <div className="overflow-hidden rounded-lg">
             <img
               className="h-full w-full object-cover object-center"
@@ -26,7 +30,7 @@ const Portfolio = () => (
             />
 
             <div className="bg-blue-200 p-3 text-xl font-bold">
-              Portfolio {elt}
+              {person?.name}
             </div>
           </div>
         </Link>

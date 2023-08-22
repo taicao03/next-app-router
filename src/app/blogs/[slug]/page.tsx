@@ -4,9 +4,14 @@ type BlogProps = {
   params: { slug: string };
 };
 
+const DATA = [
+  { name: 'chocopie', age: 30, des: 'ăn theo cách của bạn' },
+  { name: 'Sizuka', age: 20, des: 'CON NGƯỜI TÔI YÊU LÀ 1 CON NGƯỜI' },
+];
+
 export async function generateStaticParams() {
-  return Array.from(Array(6).keys()).map((elt) => ({
-    slug: `${elt}`,
+  return DATA.map((person) => ({
+    slug: `${person?.name}`,
   }));
 }
 
@@ -27,7 +32,7 @@ const PortfolioDetail = (props: BlogProps) => {
         identity while infusing it with a contemporary and innovative approach.
         Garnered favorable responses from event attendees, resulting in a
         successful event with heightened participant engagement and increased
-        brand visibility.
+        brand visibility. con chó để
       </p>
     </>
   );
