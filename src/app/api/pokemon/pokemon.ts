@@ -29,3 +29,13 @@ export async function getDetailData({ slug }) {
 
   return res.json();
 }
+
+export async function getPersonals() {
+  const res = await fetch(`${process.env.MOCK_API}`);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+}

@@ -1,15 +1,9 @@
-// 'use client';
+'use client';
 
 import * as React from 'react';
-import type { Test } from '@/types/blogs';
 import Link from 'next/link';
 
-export default async function ListItems() {
-  const res = await fetch('https://64e5cefb09e64530d17f1104.mockapi.io/anime', {
-    cache: 'no-cache',
-  });
-
-  const dataAnime: Test[] = await res.json();
+export default async function ListItems({ dataAnime }) {
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
       {dataAnime.map((item) => (

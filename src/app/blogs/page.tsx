@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 // import Image from 'next/image';
 // import { getDetailDataTest } from '@/app/api/free/free';
 import ListItems from '@/components/pages/blogs/Listitem';
+// import type { Test } from '@/types/blogs';
+import { getPersonals } from '@/app/api/pokemon/pokemon';
 
 export const metadata: Metadata = {
   title: 'Blogs',
@@ -10,8 +12,8 @@ export const metadata: Metadata = {
 };
 
 const Portfolio = async () => {
-  // const { results } = await getDetailDataTest();
-  return <>{<ListItems />}</>;
+  const dataAnime = await getPersonals();
+  return <>{<ListItems dataAnime={dataAnime} />}</>;
 };
 
 export default Portfolio;
