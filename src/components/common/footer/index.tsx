@@ -3,7 +3,7 @@ export default function Foter() {
 
   return (
     <div className="bg-slate-500">
-      <p className="">Foter</p>
+      <p>Foter</p>
     </div>
   );
 }

@@ -1,31 +1,30 @@
-'use client';
+// 'use client';
 
 import * as React from 'react';
 import type { Test } from '@/types/blogs';
-// import Link from 'next/link';
+import Link from 'next/link';
 
-type ItemsProps = {
-  initialItems: Test[];
-};
+export default async function ListItems() {
+  const res = await fetch('https://64e5cefb09e64530d17f1104.mockapi.io/anime', {
+    cache: 'no-cache',
+  });
 
-export default function ListItems({ initialItems }: ItemsProps) {
-  console.log(initialItems);
+  const dataAnime: Test[] = await res.json();
+
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-      {/* {initialItems.map((item) => (
-        <Link className="border-none" key={item.id} href={`/items/${item.id}`}>
+      {dataAnime.map((item) => (
+        <Link className="border-none" key={item.id} href={`/blogs/${item.id}`}>
           <div className="overflow-hidden rounded-lg">
             <img
               className="h-full w-full object-cover object-center"
-              src={item.imageUrl}
+              src={item.avatar}
               alt="Portfolio project"
             />
-            <div className="bg-blue-200 p-3 text-xl font-bold">
-              {item.title}
-            </div>
+            <div className="bg-blue-200 p-3 text-xl font-bold">{item.name}</div>
           </div>
         </Link>
-      ))} */}
+      ))}
     </div>
   );
 }
