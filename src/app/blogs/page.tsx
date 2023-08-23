@@ -10,14 +10,10 @@ export const metadata: Metadata = {
 };
 
 const Portfolio = async () => {
-  const { results, count } = await getDetailDataTest({ page: 0 });
+  const { results } = await getDetailDataTest();
   return (
     <>
-      <ListItems
-        initialItems={results}
-        initialTotal={count}
-        fetchItems={getDetailDataTest}
-      />
+      <ListItems initialItems={results} />
     </>
   );
 };
