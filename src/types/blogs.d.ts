@@ -8,3 +8,9 @@ export interface Pokemon {
   name: string;
   url: string;
 }
+
+export interface Test {
+  name: string;
+  count: number;
+  url: string;
+}

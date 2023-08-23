@@ -7,6 +7,8 @@ export async function getData({
   page?: number | undefined;
   limit?: number | undefined;
 }) {
+  console.log(process.env.POKEMON_ENDPOINT);
+
   const res = await fetch(
     `${process.env.POKEMON_ENDPOINT}pokemon?limit=${limit}&offset=${
       limit * page + 1

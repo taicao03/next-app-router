@@ -15,7 +15,7 @@
 //   return res.status(200).send(JSON.stringify(filteredPokemons));
 // };
 
-export default async function getData() {
+export default async function getData123() {
   const res = await fetch('https://pokeapi.co/api/v2/pokemon');
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
