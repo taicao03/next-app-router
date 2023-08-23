@@ -10,7 +10,6 @@ export default async function ListItems() {
   });
 
   const dataAnime: Test[] = await res.json();
-
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
       {dataAnime.map((item) => (
