@@ -14,4 +14,5 @@ export interface Test {
   name: string;
   avatar: string;
   createdAt: string;
+  age: number;
 }

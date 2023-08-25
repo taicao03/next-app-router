@@ -25,3 +25,20 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.image-container {
+  position: relative;
+  overflow: hidden; /* Đảm bảo ảnh không bị tràn ra khỏi vùng chứa */
+  width: 100%;
+  height: 500px;
+}
+
+.image-container img {
+  width: 100%; /* Đảm bảo ảnh luôn điền vừa container */
+  height: 100%;
+  transition: transform 0.1s ease-in-out; /* Thời gian chuyển đổi */
+}
+
+.image-container:hover img {
+  transform: scale(1.2); /* Tăng tỷ lệ để tạo hiệu ứng zoom */
+}
