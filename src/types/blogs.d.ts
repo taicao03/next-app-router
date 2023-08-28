@@ -10,9 +10,8 @@ export interface Pokemon {
 }
 
 export interface Test {
-  id: number;
   name: string;
   avatar: string;
-  createdAt: string;
-  age: number;
+  age: string;
+  description: string;
 }

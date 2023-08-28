@@ -20,9 +20,11 @@ function Section({ children }) {
     </section>
   );
 }
+// PropTypes
 Section.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
 export default function Home() {
   const ref = useRef(null);
   const isView = useInView(ref, { once: true });
@@ -68,6 +70,10 @@ export default function Home() {
               triều Nguyễn được sơn son thếp vàng. Chén ngọc bọc vàng được sử
               dụng dưới thời vua Khải Định.`}
             </h2>
+            <img
+              src="https://tse1.mm.bing.net/th?id=OIP.L44v9JvIWjKtDqZu3gCrFQHaE8&pid=Api&P=0&h=180"
+              alt=""
+            />
           </Section>
         </main>
       </motion.div>
