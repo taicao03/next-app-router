@@ -19,6 +19,7 @@ export default function Input({
         <input
           type="text"
           name={name}
+          id={name}
           defaultValue={value || ''}
           placeholder={placeholder || 'Vui lòng nhập'}
           autoComplete="given-name"
