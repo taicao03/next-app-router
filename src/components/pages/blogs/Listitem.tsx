@@ -5,6 +5,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { addBlog } from '@/app/actions/demoActions/index';
+import Input from '@/components/common/ui/input';
+import Button from '@/components/common/ui/button';
+import Images from '@/components/common/ui/images';
+
 export default function ListItems({ dataAnime }) {
   return (
     <>
@@ -12,95 +16,50 @@ export default function ListItems({ dataAnime }) {
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-              <div className="sm:col-span-3">
-                <label
-                  htmlFor="avatar"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  First name
-                </label>
-                <div className="mt-2">
-                  <input
-                    type="text"
-                    name="avatar"
-                    placeholder="Vui Lòng nhập avtart"
-                    autoComplete="given-name"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
-              </div>
+              <Input
+                label="Anh"
+                parentClass="sm:col-span-3"
+                name="avatar"
+                placeholder=""
+                value=""
+              />
 
-              <div className="sm:col-span-3">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  First name
-                </label>
-                <div className="mt-2">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Vui Lòng nhập tên"
-                    autoComplete="given-name"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
-              </div>
+              <Input
+                label="Tên của bạn"
+                parentClass="sm:col-span-3"
+                name="name"
+                placeholder=""
+                value=""
+              />
 
-              <div className="sm:col-span-3">
-                <label
-                  htmlFor="age"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  First name
-                </label>
-                <div className="mt-2">
-                  <input
-                    type="text"
-                    name="age"
-                    placeholder="Vui Lòng nhập tuổi"
-                    autoComplete="given-name"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
-              </div>
-              <div className="sm:col-span-3">
-                <label
-                  htmlFor="description"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  First name
-                </label>
-                <div className="mt-2">
-                  <input
-                    type="text"
-                    name="description"
-                    placeholder="Vui Lòng nhập mota"
-                    autoComplete="given-name"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
-              </div>
+              <Input
+                label="Tuổi của bạn"
+                parentClass="sm:col-span-3"
+                name="age"
+                placeholder=""
+                value=""
+              />
+
+              <Input
+                label="Mô tả của bạn"
+                parentClass="sm:col-span-3"
+                name="description"
+                placeholder=""
+                value=""
+              />
             </div>
           </div>
         </div>
 
         <div className="mt-6 flex items-center justify-end gap-x-6">
-          <button
-            type="button"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Save
-          </button>
+          <Button type="submit" text="Thêm" />
         </div>
       </form>
+
+      <div className="">
+        <Images alt="2131" className="" src="img-test.jpg" />
+      </div>
+
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
         {dataAnime.map((item) => (
           <Link

@@ -1,8 +1,6 @@
 export default function Foter() {
-  // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <div className="bg-slate-500">
+    <div className="bg-slate-500 p-4 md:p-5">
       <p>Foter</p>
     </div>
   );

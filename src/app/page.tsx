@@ -55,7 +55,7 @@ export default function Home() {
         <main>
           <h2>alooo</h2>
           <Section>
-            <h2 className="mb-20">
+            <h2 className="mb-20 text-black">
               {` Triển lãm trưng bày 100 cổ vật tiêu biểu, như kim sách bằng bạc mạ
               vàng, bộ ấn, kiếm và một số đồ dùng trong hoàng cung thời Khải
               Định. Nổi bật là thanh kiếm "An dân bảo kiếm" của nhà vua từng sử
