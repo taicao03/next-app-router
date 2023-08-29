@@ -71,7 +71,6 @@ export default function ListItems({
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLeRyQWQjNTT-7Wei7wfE8y124moGbYgojMQ&usqp=CAU"
                   alt="Portfolio project"
                 />
-
                 <div className="bg-blue-200 p-3 text-xl font-bold">
                   {pokemon.name}
                 </div>

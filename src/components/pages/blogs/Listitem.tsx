@@ -8,7 +8,6 @@ import { addBlog } from '@/app/actions/demoActions/index';
 import Input from '@/components/common/ui/input';
 import Button from '@/components/common/ui/button';
 import Images from '@/components/common/ui/images';
-
 export default function ListItems({ dataAnime }) {
   return (
     <>
@@ -68,37 +67,47 @@ export default function ListItems({ dataAnime }) {
           </div>
         </form>
 
-        <div className="">
+        <div className="hidden">
           <Images alt="2131" className="" src="img-test.jpg" />
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {dataAnime.map((item) => (
-            <Link
-              className="border-none"
-              key={item.id}
-              href={`/blogs/${item.id}`}
-            >
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {dataAnime.data.map((item) => (
+            <Link className="border-none" key={item.id} href={'/'}>
               <div className="overflow-hidden rounded-lg">
                 <div className="image-container">
-                  <motion.img
-                    src={item.avatar}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
-                    alt="Portfolio project"
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  />
+                  {item.card_images.map((cardImage) => (
+                    <motion.img
+                      key={cardImage.id}
+                      src={cardImage.image_url}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
+                      alt="Portfolio project"
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    />
+                  ))}
                 </div>
                 <div className="bg-blue-200 p-3 text-xl font-bold">
                   {item.name}
                 </div>
-                <div className="bg-blue-200 p-3 text-xl font-bold">
-                  {item.age}
-                </div>
-                <div className="bg-blue-200 p-3 text-xl font-bold">
-                  {item.description}
-                </div>
+
+                {item?.level && (
+                  <div className="bg-blue-200 p-3 text-xl font-bold">
+                    <span className="me-5"> Sao : {item.level}</span>
+                  </div>
+                )}
+
+                {item?.def && (
+                  <div className="bg-blue-200 p-3 text-xl font-bold">
+                    <span className="me-5">Atk: {item?.atk} </span>
+                    <span>Def: {item?.def} </span>
+                  </div>
+                )}
+
+                {/* <div className="bg-blue-200 p-3 text-xl font-bold">
+                  {item.desc}
+                </div> */}
               </div>
             </Link>
           ))}
@@ -107,15 +116,22 @@ export default function ListItems({ dataAnime }) {
     </>
   );
 }
-
 ListItems.propTypes = {
-  dataAnime: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      avatar: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      age: PropTypes.string.isRequired,
-      description: PropTypes.string,
-    }),
-  ).isRequired,
+  dataAnime: PropTypes.shape({
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+        images: PropTypes.arrayOf(
+          PropTypes.shape({
+            cardImage: PropTypes.number,
+            image_url: PropTypes.string,
+          }),
+        ),
+        atk: PropTypes.number,
+        name: PropTypes.string,
+        level: PropTypes.number,
+        def: PropTypes.number,
+      }),
+    ),
+  }).isRequired,
 };
