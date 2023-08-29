@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ListItems from '@/components/pages/blogs/Listitem';
 import { getPersonals } from '@/app/api/pokemon/pokemon';
+
 export const metadata: Metadata = {
   title: 'Blogs',
   description: 'Welcome to my portfolio page!',

@@ -6,6 +6,7 @@ export default function Input({
   placeholder,
   value,
   parentClass,
+  req,
 }) {
   return (
     <div className={`${parentClass}`}>
@@ -14,12 +15,15 @@ export default function Input({
         className="block text-sm font-medium leading-6 text-gray-900"
       >
         {label}
+
+        {req && <span className="text-red">*</span>}
       </label>
       <div className="mt-2">
         <input
           type="text"
           name={name}
           id={name}
+          required={req || false}
           defaultValue={value || ''}
           placeholder={placeholder || 'Vui lòng nhập'}
           autoComplete="given-name"

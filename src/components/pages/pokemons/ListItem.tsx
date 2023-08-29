@@ -4,6 +4,7 @@ import * as React from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import type { Pokemon } from '@/types/blogs';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 type ItemsProps = {
   initialItems: Pokemon[];
@@ -38,38 +39,47 @@ export default function ListItems({
   };
 
   return (
-    <InfiniteScroll
-      hasMore
-      pageStart={0}
-      loadMore={loadMore}
-      loader={
-        <span key={0} className="loader">
-          Loading ...
-        </span>
-      }
-      element="main"
+    <motion.div
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      initial={{ opacity: 0, y: 20 }}
+      exit={{ opacity: 0, y: 20 }}
     >
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {items.map((pokemon) => (
-          <Link
-            className="border-none"
-            key={pokemon.name}
-            href={`/pokemons/${pokemon.name}`}
-          >
-            <div className="overflow-hidden rounded-lg">
-              <img
-                className="h-full w-full object-cover object-center"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLeRyQWQjNTT-7Wei7wfE8y124moGbYgojMQ&usqp=CAU"
-                alt="Portfolio project"
-              />
+      <InfiniteScroll
+        hasMore
+        pageStart={0}
+        loadMore={loadMore}
+        loader={
+          <span key={0} className="loader">
+            Loading ...
+          </span>
+        }
+        element="main"
+      >
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {items.map((pokemon) => (
+            <Link
+              className="border-none"
+              key={pokemon.name}
+              href={`/pokemons/${pokemon.name}`}
+            >
+              <div className="overflow-hidden rounded-lg">
+                <img
+                  className="h-full w-full object-cover object-center"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLeRyQWQjNTT-7Wei7wfE8y124moGbYgojMQ&usqp=CAU"
+                  alt="Portfolio project"
+                />
 
-              <div className="bg-blue-200 p-3 text-xl font-bold">
-                {pokemon.name}
+                <div className="bg-blue-200 p-3 text-xl font-bold">
+                  {pokemon.name}
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </InfiniteScroll>
+            </Link>
+          ))}
+        </div>
+      </InfiniteScroll>
+    </motion.div>
   );
 }

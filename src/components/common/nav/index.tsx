@@ -2,7 +2,10 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import OffCanvas from './mobile';
+import { usePathname } from 'next/navigation';
+
 const navigation = [
   { name: 'Blogs', href: '/blogs' },
   { name: 'Pokemons', href: '/pokemons' },
@@ -10,6 +13,7 @@ const navigation = [
 
 export default function Navbar() {
   const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false);
+  const path = usePathname();
 
   const handleOpenOffCanvas = () => {
     setIsOffCanvasOpen(true);
@@ -46,10 +50,16 @@ export default function Navbar() {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                className="text-sm font-semibold leading-6 text-gray-900"
+                className="relative text-black"
                 href={item.href}
                 passHref
               >
+                {item?.href === path && (
+                  <motion.span
+                    layoutId="underline"
+                    className="absolute left-0 top-full block h-[1px] w-full bg-blue-200"
+                  />
+                )}
                 {item.name}
               </Link>
             ))}
