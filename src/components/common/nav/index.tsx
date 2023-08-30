@@ -2,13 +2,21 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import OffCanvas from './mobile';
 import { usePathname } from 'next/navigation';
+const logo = {
+  logo: <img src="/images/svg/logo.svg" alt="" />,
+};
 
 const navigation = [
+  { name: 'Home', href: '/' },
+  { name: 'For Creators', href: '/creators' },
+  { name: 'For Brands', href: '/brands' },
+  { logo: true, href: '/' },
   { name: 'Blogs', href: '/blogs' },
-  { name: 'Pokemons', href: '/pokemons' },
+  { name: 'Library', href: '/library' },
+  { name: 'Contact Us', href: '/contact' },
 ];
 
 export default function Navbar() {
@@ -27,40 +35,32 @@ export default function Navbar() {
     <>
       <div className="bg-white">
         <nav
-          className="flex items-center justify-between p-6 lg:px-8"
+          className="flex md-flex lg:block items-center lg:justify-normal border-b border-b-black justify-between p-6 lg:px-8"
           aria-label="Global"
         >
-          <div className="flex lg:flex-1">
+          <div className="flex lg:flex-1 lg:hidden">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+              {logo?.logo}
             </Link>
           </div>
-          <div className="flex lg:hidden">
+          <div className="flex lg:hidden justify-center">
             <button className="text-black" onClick={handleOpenOffCanvas}>
               Open Off-Canvas
             </button>
           </div>
 
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-12 justify-center items-center">
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                className="relative text-black"
+                className={`text-nav text-black ${
+                  item?.href === path ? 'text-red-500' : ''
+                }`}
                 href={item.href}
                 passHref
               >
-                {item?.href === path && (
-                  <motion.span
-                    layoutId="underline"
-                    className="absolute left-0 top-full block h-[1px] w-full bg-blue-200"
-                  />
-                )}
-                {item.name}
+                {item.name || logo?.logo}
               </Link>
             ))}
           </div>

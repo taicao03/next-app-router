@@ -15,12 +15,75 @@ const config: Config = {
       },
       colors: {
         transparent: 'transparent',
+        primary: '#DC1A5D',
+        secondary: '#D9D9D9',
       },
       screens: {
         sm: '575px',
         md: '768px',
         lg: '991px',
         xl: '1199px',
+      },
+      padding: {
+        '111px': '111px',
+        '18px': '18px',
+        '52px': '52px',
+      },
+      fontFamily: {
+        sans: ['MePoppins', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+      },
+      fontSize: {
+        base: [
+          '15px',
+          {
+            lineHeight: '24px',
+            fontWeight: '400',
+          },
+        ],
+        base_sm: [
+          '12px',
+          {
+            lineHeight: '16px',
+            fontWeight: '400',
+          },
+        ],
+        nav: [
+          '15px',
+          {
+            lineHeight: '24px',
+            fontWeight: '700',
+          },
+        ],
+        label: [
+          '16px',
+          {
+            lineHeight: '20px',
+            fontWeight: '700',
+          },
+        ],
+        title: [
+          '20px',
+          {
+            lineHeight: '36px',
+            fontWeight: '700',
+          },
+        ],
+        button: [
+          '16px',
+          {
+            lineHeight: '24px',
+            fontWeight: '700',
+          },
+        ],
+
+        header: [
+          '20px',
+          {
+            lineHeight: '36px',
+            fontWeight: '700',
+          },
+        ],
       },
     },
   },

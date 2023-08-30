@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,6 +24,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
   background-color: white;
+  font-family: MePoppins;
 }
 
 .image-container {
@@ -71,6 +71,27 @@ body {
   cursor: pointer;
 }
 
+/* INPUT */
+input {
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  color: black;
+  border-bottom: 1px solid #828282;
+}
+
+input:focus-visible {
+  outline: none;
+  /* border-bottom: 1px solid red; */
+}
+
+input::placeholder {
+  color: #828282;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
 /* Off canvas */
 .fade-in-right {
   -webkit-animation: fade-in-right 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s
@@ -82,7 +103,19 @@ body {
     both;
   animation: slide-out-right 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
-
+.custom-select {
+  appearance: none;
+  background-image: url('/images/svg/dropdown.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 16px 16px;
+}
+.custom-select:focus-visible {
+  outline: none;
+}
+.test {
+  width: 200px;
+}
 /* OFF */
 
 @-webkit-keyframes slide-out-right {
@@ -148,4 +181,51 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+.App {
+  width: 50%;
+  margin: 10rem auto;
+  height: 570px;
+}
+
+.slide img {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.slide {
+  transform: scale(0.2);
+  transition: transform 300ms;
+  opacity: 0.5;
+}
+
+.activeSlide {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.arrow {
+  background-color: #fff;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow svg {
+  transition: color 300ms;
+}
+
+.arrow svg:hover {
+  color: #68edff;
+}
+
+.next {
+  right: 0%;
+  top: 50%;
+}
+
+.prev {
+  left: 0%;
+  top: 50%;
 }
