@@ -113,8 +113,12 @@ input::placeholder {
 .custom-select:focus-visible {
   outline: none;
 }
-.test {
-  width: 200px;
+
+.split-text {
+    background: linear-gradient(90deg, #DC1A5D 20.26%, #DB1C77 40.19%, #D721C4 50.15%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 /* OFF */
 

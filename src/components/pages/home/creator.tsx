@@ -12,7 +12,7 @@ const UICreator = () => {
         </h2>
         <div className="text-center text-title_lg">
           <span className="text-black">Meet our</span>
-          <span className="">“livestream by passion”</span>
+          <span className="split-text">“livestream by passion”</span>
         </div>
         <div className="text-center text-title_lg text-black">
           creator partner
