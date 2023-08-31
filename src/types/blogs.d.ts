@@ -8,3 +8,10 @@ export interface Pokemon {
   name: string;
   url: string;
 }
+
+export interface Test {
+  name: string;
+  avatar: string;
+  age: string;
+  description: string;
+}

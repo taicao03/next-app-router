@@ -12,11 +12,8 @@ export async function getData({
       limit * page + 1
     }`,
   );
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data');
   }
 
@@ -25,11 +22,18 @@ export async function getData({
 
 export async function getDetailData({ slug }) {
   const res = await fetch(`${process.env.POKEMON_ENDPOINT}pokemon/${slug}`);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+}
+
+export async function getPersonals() {
+  const res = await fetch(`${process.env.MOCK_API}`);
+
+  if (!res.ok) {
     throw new Error('Failed to fetch data');
   }
 

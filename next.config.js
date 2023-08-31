@@ -18,6 +18,7 @@ const nextConfig = {
     appDir: true,
     serverActions: true,
   },
+
   // i18n,
 };
 
