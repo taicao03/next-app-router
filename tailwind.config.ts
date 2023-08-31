@@ -17,6 +17,7 @@ const config: Config = {
         transparent: 'transparent',
         primary: '#DC1A5D',
         secondary: '#D9D9D9',
+        gray: '#757575',
       },
       screens: {
         sm: '575px',
@@ -28,6 +29,16 @@ const config: Config = {
         '111px': '111px',
         '18px': '18px',
         '52px': '52px',
+        '72px': '72px',
+        '133px': '133px',
+        '60px': '60px',
+        '80px': '80px',
+      },
+      height: {
+        '680': '680px',
+      },
+      margin: {
+        '870px': '870px',
       },
       fontFamily: {
         sans: ['MePoppins', 'sans-serif'],
@@ -67,6 +78,27 @@ const config: Config = {
           {
             lineHeight: '36px',
             fontWeight: '700',
+          },
+        ],
+        title_sm: [
+          '24px',
+          {
+            lineHeight: '32px',
+            fontWeight: '700',
+          },
+        ],
+        title_lg: [
+          '48px',
+          {
+            lineHeight: '58px',
+            fontWeight: '700',
+          },
+        ],
+        base_secondary: [
+          '20px',
+          {
+            lineHeight: '32px',
+            fontWeight: '400',
           },
         ],
         button: [

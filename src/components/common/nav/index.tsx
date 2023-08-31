@@ -19,7 +19,7 @@ const navigation = [
   { name: 'Contact Us', href: '/contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ type }) {
   const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false);
   const path = usePathname();
 
@@ -33,9 +33,11 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="bg-white">
+      <div className="relative z-30">
         <nav
-          className="flex md-flex lg:block items-center lg:justify-normal border-b border-b-black justify-between p-6 lg:px-8"
+          className={`flex md-flex lg:block items-center lg:justify-normal justify-between md:p-7 p-3.5 lg:px-8 ${
+            type === true ? 'text-black' : 'text-white'
+          }`}
           aria-label="Global"
         >
           <div className="flex lg:flex-1 lg:hidden">

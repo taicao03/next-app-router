@@ -1,7 +1,8 @@
 'use client';
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
 import PropTypes from 'prop-types';
+import UICreator from '@/components/pages/home/creator';
 function Section({ children }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -12,7 +13,7 @@ function Section({ children }) {
         style={{
           transform: isInView ? 'none' : 'translateX(-100%)',
           opacity: isInView ? 1 : 0,
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
         }}
       >
         {children}
@@ -26,73 +27,85 @@ Section.propTypes = {
 };
 
 export default function Home() {
+  const ref = useRef(null);
+  const [isHidden, setIsHidden] = React.useState(false);
+  const slideControl = useAnimation();
+
+  useEffect(() => {
+    slideControl.start('visible');
+  }, []);
+  useEffect(() => {
+    const onAnimationComplete = () => {
+      setIsHidden(true);
+    };
+
+    slideControl.start('visible').then(onAnimationComplete);
+  }, []);
   return (
-    <>
-      <Section>
-        <h2 className="mb-20 text-black">
-          {` Triển lãm trưng bày 100 cổ vật tiêu biểu, như kim sách bằng bạc mạ
-              vàng, bộ ấn, kiếm và một số đồ dùng trong hoàng cung thời Khải
-              Định. Nổi bật là thanh kiếm "An dân bảo kiếm" của nhà vua từng sử
-              dụng. Kiếm được nạm vàng và da đồi mồi, dài khoảng 90 cm, chạm
-              khắc hình rồng tinh xảo. Chuôi kiếm nạm vàng, chạm khắc chữ và hoa
-              văn rồng, thể hiện uy quyền của nhà vua. Kim sách dưới triều vua
-              Khải Định, một loại thư tịch cổ ghi lại việc chính sự, lễ nghi
-              triều Nguyễn. Sách gồm 9 tờ, 2 tờ bìa trước và sau được trang trí
-              hình rồng mây, 7 tờ ruột khắc sách văn. Ấn Khải Định thần khuê
-              bằng ngà voi, được khắc năm Khải Định thứ nhất 1916. Ấn Hoàng tông
-              tuyên hoàng đế chi bảo được đúc năm Khải Định thứ 10, 1925. Ngai
-              triều Nguyễn được sơn son thếp vàng. Chén ngọc bọc vàng được sử
-              dụng dưới thời vua Khải Định.`}
-        </h2>
-        <img
-          src="https://tse1.mm.bing.net/th?id=OIP.L44v9JvIWjKtDqZu3gCrFQHaE8&pid=Api&P=0&h=180"
-          alt=""
-        />
-      </Section>
+    <div className="relative">
+      <div className="relative -top-20 w-full">
+        <video
+          className="object-cover md:h-680"
+          autoPlay
+          loop={true}
+          width="100%"
+          controls={false}
+          height="100%"
+          playsInline
+          muted
+        >
+          <source
+            src="https://metub.net/template/images/metub_video.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {/* Content */}
+      <div className="md:px-[133px]">
+        <Section>
+          <UICreator />
+        </Section>
+      </div>
 
-      <Section>
-        <h2 className="mb-20 text-black">
-          {` Triển lãm trưng bày 100 cổ vật tiêu biểu, như kim sách bằng bạc mạ
-              vàng, bộ ấn, kiếm và một số đồ dùng trong hoàng cung thời Khải
-              Định. Nổi bật là thanh kiếm "An dân bảo kiếm" của nhà vua từng sử
-              dụng. Kiếm được nạm vàng và da đồi mồi, dài khoảng 90 cm, chạm
-              khắc hình rồng tinh xảo. Chuôi kiếm nạm vàng, chạm khắc chữ và hoa
-              văn rồng, thể hiện uy quyền của nhà vua. Kim sách dưới triều vua
-              Khải Định, một loại thư tịch cổ ghi lại việc chính sự, lễ nghi
-              triều Nguyễn. Sách gồm 9 tờ, 2 tờ bìa trước và sau được trang trí
-              hình rồng mây, 7 tờ ruột khắc sách văn. Ấn Khải Định thần khuê
-              bằng ngà voi, được khắc năm Khải Định thứ nhất 1916. Ấn Hoàng tông
-              tuyên hoàng đế chi bảo được đúc năm Khải Định thứ 10, 1925. Ngai
-              triều Nguyễn được sơn son thếp vàng. Chén ngọc bọc vàng được sử
-              dụng dưới thời vua Khải Định.`}
-        </h2>
-        <img
-          src="https://tse1.mm.bing.net/th?id=OIP.L44v9JvIWjKtDqZu3gCrFQHaE8&pid=Api&P=0&h=180"
-          alt=""
-        />
-      </Section>
-
-      <Section>
-        <h2 className="mb-20 text-black">
-          {` Triển lãm trưng bày 100 cổ vật tiêu biểu, như kim sách bằng bạc mạ
-              vàng, bộ ấn, kiếm và một số đồ dùng trong hoàng cung thời Khải
-              Định. Nổi bật là thanh kiếm "An dân bảo kiếm" của nhà vua từng sử
-              dụng. Kiếm được nạm vàng và da đồi mồi, dài khoảng 90 cm, chạm
-              khắc hình rồng tinh xảo. Chuôi kiếm nạm vàng, chạm khắc chữ và hoa
-              văn rồng, thể hiện uy quyền của nhà vua. Kim sách dưới triều vua
-              Khải Định, một loại thư tịch cổ ghi lại việc chính sự, lễ nghi
-              triều Nguyễn. Sách gồm 9 tờ, 2 tờ bìa trước và sau được trang trí
-              hình rồng mây, 7 tờ ruột khắc sách văn. Ấn Khải Định thần khuê
-              bằng ngà voi, được khắc năm Khải Định thứ nhất 1916. Ấn Hoàng tông
-              tuyên hoàng đế chi bảo được đúc năm Khải Định thứ 10, 1925. Ngai
-              triều Nguyễn được sơn son thếp vàng. Chén ngọc bọc vàng được sử
-              dụng dưới thời vua Khải Định.`}
-        </h2>
-        <img
-          src="https://tse1.mm.bing.net/th?id=OIP.L44v9JvIWjKtDqZu3gCrFQHaE8&pid=Api&P=0&h=180"
-          alt=""
-        />
-      </Section>
-    </>
+      {/* ANIMATION */}
+      <div className="md:block hidden">
+        {isHidden ? null : (
+          <div ref={ref}>
+            <motion.div
+              variants={{
+                hidden: {
+                  opacity: 1,
+                },
+                visible: {
+                  opacity: 0.5,
+                },
+              }}
+              className="left-0 right-0"
+              initial="hidden"
+              animate={slideControl}
+              transition={{ duration: 0.8, ease: 'easeInOut' }}
+              style={{
+                position: 'absolute',
+                top: '-83px',
+                bottom: '-100%',
+                right: 0,
+                left: 0,
+                background: 'pink',
+                zIndex: 40,
+              }}
+            >
+              <div className="my-0 mx-auto h-full">
+                {/* <img
+                src="https://images.rawpixel.com/dark_image_png_social_landscape/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvc3YxODI3MjgtaW1hZ2Utam9iNjE1XzEucG5n.png?s=IKSzlIxj2E6qEuhMXc9lGjhL76KcFkOH7WSf62UCG98"
+                className="h-full my-0 mx-auto"
+                alt=""
+              /> */}
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

@@ -8,58 +8,11 @@ import Input from '@/components/common/ui/input';
 import Button from '@/components/common/ui/button';
 import Images from '@/components/common/ui/images';
 import Select from '@/components/common/ui/select';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { useState } from 'react';
-export default function ListItems({ dataAnime }) {
-  const images = [
-    'https://tse1.mm.bing.net/th?id=OIP.ibNBUEhxk47pnAnVQR8kfQHaEo&pid=Api&P=0&h=180',
-    'https://tse4.mm.bing.net/th?id=OIP.iUp2eqWqOILkBkrlgV4GyQHaFT&pid=Api&P=0&h=180',
-    'https://tse1.mm.bing.net/th?id=OIP.ibNBUEhxk47pnAnVQR8kfQHaEo&pid=Api&P=0&h=180',
-    'https://tse4.mm.bing.net/th?id=OIP.aCdryHDgmSuVLNH2hYRtyAHaFj&pid=Api&P=0&h=180',
-  ];
-  const [imageIndex, setImageIndex] = useState(0);
-  // const PrevArrow = ({ onClick }) => {
-  //   return (
-  //     <div className="arrow prev" onClick={onClick}>
-  //       2
-  //     </div>
-  //   );
-  // };
-  // const NextArrow = ({ onClick }) => {
-  //   return (
-  //     <div className="arrow next" onClick={onClick}>
-  //       1
-  //     </div>
-  //   );
-  // };
-  const settings = {
-    infinite: true,
-    lazyLoad: true,
-    speed: 300,
-    slidesToShow: 3,
-    centerMode: true,
-    centerPadding: 0,
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
-    beforeChange: (current, next) => setImageIndex(next),
-  };
 
+export default function ListItems({ dataAnime }) {
   return (
     <>
-      <div className="App">
-        <Slider {...settings}>
-          {images.map((img, idx) => (
-            <div
-              key={idx}
-              className={idx === imageIndex ? 'slide activeSlide' : 'slide'}
-            >
-              <img src={img} alt={img} />
-            </div>
-          ))}
-        </Slider>
-      </div>
+      <div className="App"></div>
       <motion.div
         animate={{
           opacity: 1,
