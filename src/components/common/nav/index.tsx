@@ -53,9 +53,9 @@ export default function Navbar({ type }) {
           </div>
 
           <div className="hidden lg:flex lg:gap-x-12 justify-center items-center">
-            {navigation.map((item) => (
+            {navigation.map((item, index) => (
               <Link
-                key={item.name}
+                key={index}
                 className={`text-nav text-black ${
                   item?.href === path ? 'text-red-500' : ''
                 }`}
@@ -69,8 +69,8 @@ export default function Navbar({ type }) {
         </nav>
       </div>
       <OffCanvas isOpen={isOffCanvasOpen} onClose={handleCloseOffCanvas}>
-        {navigation.map((item) => (
-          <div key={item.name}>
+        {navigation.map((item, index) => (
+          <div key={index}>
             <Link
               href={item.href}
               className="text-sm font-semibold leading-6 text-gray-900"

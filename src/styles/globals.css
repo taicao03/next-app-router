@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -14,7 +15,6 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-@import url('https://fonts.googleapis.com/css2?family=Borel&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -186,3 +186,34 @@ input::placeholder {
     opacity: 1;
   }
 }
+.carousel-wrapper {
+    display: grid;
+    place-content: center;
+    border-radius: 2rem;
+
+  }
+  .carousel-content {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+  }
+  
+  .carousel-item {
+    position: absolute;
+    width: 230px;
+    height: 368px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+  }
+  
+  .carousel-btns {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 6;
+  }
+  

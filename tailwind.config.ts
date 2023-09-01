@@ -33,6 +33,7 @@ const config: Config = {
         '133px': '133px',
         '60px': '60px',
         '80px': '80px',
+        '215px': '215px',
       },
       height: {
         '680': '680px',
@@ -84,6 +85,13 @@ const config: Config = {
           '24px',
           {
             lineHeight: '32px',
+            fontWeight: '700',
+          },
+        ],
+        title_md: [
+          '28px',
+          {
+            lineHeight: '44px',
             fontWeight: '700',
           },
         ],

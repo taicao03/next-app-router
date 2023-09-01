@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import PropTypes from 'prop-types';
 import UICreator from '@/components/pages/home/creator';
+import UIHomeServices from '@/components/pages/home/services';
+
 function Section({ children }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -33,14 +35,15 @@ export default function Home() {
 
   useEffect(() => {
     slideControl.start('visible');
-  }, []);
+  }, [slideControl]);
+
   useEffect(() => {
     const onAnimationComplete = () => {
       setIsHidden(true);
     };
 
     slideControl.start('visible').then(onAnimationComplete);
-  }, []);
+  }, [slideControl]);
   return (
     <div className="relative">
       <div className="relative -top-20 w-full">
@@ -62,12 +65,13 @@ export default function Home() {
         </video>
       </div>
       {/* Content */}
-      <div className="md:px-[133px]">
-        <Section>
-          <UICreator />
-        </Section>
-      </div>
 
+      <Section>
+        <UICreator />
+      </Section>
+      <Section>
+        <UIHomeServices />
+      </Section>
       {/* ANIMATION */}
       <div className="md:block hidden">
         {isHidden ? null : (

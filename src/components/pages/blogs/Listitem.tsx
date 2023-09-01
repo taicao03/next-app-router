@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 'use client';
 import * as React from 'react';
 import Link from 'next/link';
@@ -8,7 +9,6 @@ import Input from '@/components/common/ui/input';
 import Button from '@/components/common/ui/button';
 import Images from '@/components/common/ui/images';
 import Select from '@/components/common/ui/select';
-
 export default function ListItems({ dataAnime }) {
   return (
     <>
