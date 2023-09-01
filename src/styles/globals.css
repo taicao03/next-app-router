@@ -217,3 +217,36 @@ input::placeholder {
     z-index: 6;
   }
   
+  .app{
+  width: 500px;
+  margin: 0 auto;
+  }
+  .swiper-slide-prev{
+ position: relative !important;
+ right: -40px;
+  }
+   .swiper-slide-next{
+ position: relative !important;
+ left: -40px;
+   
+  }
+ .swiper-slide{
+    display: none;
+    height: 300px !important;
+    position: absolute
+
+  }
+  .swiper-slide-active{
+    height: 400px !important;
+    position: relative;
+    z-index: 3;
+    display: block !important;
+ position: relative !important;
+
+  }
+  .custom .swiper-wrapper{
+    align-items: center;
+  }
+  .swiper-slide img{
+    height: 100%;
+  }
