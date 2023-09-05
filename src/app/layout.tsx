@@ -1,9 +1,10 @@
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 //* Components
 import Footer from '@/components/common/footer';
-const inter = Inter({ subsets: ['latin'] });
+
+const poppins = Poppins({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata: Metadata = {
   title: 'Metub creator blog',
@@ -17,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         {children}
         <Footer />
       </body>

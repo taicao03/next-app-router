@@ -1,9 +1,21 @@
-import type { NextPage } from 'next';
+'use client';
 
-export const Custom404: NextPage = () => null;
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
-export const getServerSideProps: () => Promise<any> = async () => {
-  return { redirect: { destination: '/', permanent: true } };
-};
+export default function NotFound() {
+  const router = useRouter();
 
-export default Custom404;
+  useEffect(() => {
+    router.replace('/');
+  });
+
+  return (
+    <div>
+      <h2>Not Found</h2>
+      <p>Could not find requested resource</p>
+      <Link href="/">Return Home</Link>
+    </div>
+  );
+}
