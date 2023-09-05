@@ -1,11 +1,9 @@
-import Link from 'next/link';
+import type { NextPage } from 'next';
 
-export default function NotFound() {
-  return (
-    <div>
-      <h2>Not Found</h2>
-      <p>Could not find requested resource</p>
-      <Link href="/">Return Home</Link>
-    </div>
-  );
-}
+export const Custom404: NextPage = () => null;
+
+export const getServerSideProps: () => Promise<any> = async () => {
+  return { redirect: { destination: '/', permanent: true } };
+};
+
+export default Custom404;

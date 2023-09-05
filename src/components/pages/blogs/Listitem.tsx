@@ -17,7 +17,16 @@ import 'swiper/css/scrollbar';
 export default function ListItems({ dataAnime }) {
   const a = [
     {
+      img: 'https://tse3.mm.bing.net/th?id=OIP.1cI4dxNV3dGWXpu_5HGMCQHaEK&pid=Api&P=0&h=180',
+    },
+    {
       img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
+    },
+    {
+      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
+    },
+    {
+      img: 'https://tse4.mm.bing.net/th?id=OIP.bWeddDFd01ZrzWqX9bD4zwAAAA&pid=Api&P=0&h=180',
     },
     {
       img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
@@ -29,16 +38,7 @@ export default function ListItems({ dataAnime }) {
       img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
     },
     {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
+      img: 'https://tse1.mm.bing.net/th?id=OIP.c5LcHm0jmRJ2gkJl55XtgAHaEM&pid=Api&P=0&h=180',
     },
     {
       img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
@@ -77,7 +77,15 @@ export default function ListItems({ dataAnime }) {
             ))}
           </Swiper>
         </div>
-
+        <div className="runningText">
+          <p className="text-black">This is some running text.</p>
+          <p className="text-black">This is some running text.</p>
+          <p className="text-black">This is some running text.</p>
+          <p className="text-black">This is some running text.</p>
+          <p className="text-black">This is some running text.</p>
+          <p className="text-black">This is some running text.</p>
+          <p className="text-black">This is some running text.</p>
+        </div>
         <form action={addBlog}>
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">
@@ -128,8 +136,8 @@ export default function ListItems({ dataAnime }) {
           </div>
 
           <div className="mt-6 flex items-center justify-end gap-x-6">
-            <Button type="submit" text="Thêm" />
-            <Button type="button" text="Thêm" />
+            <Button type="submit" text="Thêm" classname="" />
+            <Button type="button" text="Thêm" classname="" />
           </div>
         </form>
 
@@ -170,10 +178,6 @@ export default function ListItems({ dataAnime }) {
                     <span>Def: {item?.def} </span>
                   </div>
                 )}
-
-                {/* <div className="bg-blue-200 p-3 text-xl font-bold">
-                  {item.desc}
-                </div> */}
               </div>
             </Link>
           ))}

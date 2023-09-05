@@ -28,7 +28,7 @@ export default function Foter() {
           <div className="relative mb-6">
             <img src="/images/svg/footer.png" className="md:h-40 h-24" alt="" />
             <div className="absolute md:top-20 top-12">
-              <Button type="" text="Get in touch" />
+              <Button type="" text="Get in touch" classname="" />
             </div>
           </div>
 

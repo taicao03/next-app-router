@@ -27,19 +27,44 @@ const config: Config = {
       },
       padding: {
         '111px': '111px',
+        '112px': '112px',
         '18px': '18px',
         '52px': '52px',
+        '50px': '50px',
         '72px': '72px',
+        '94px': '94px',
         '133px': '133px',
+        '136px': '136px',
         '60px': '60px',
         '80px': '80px',
         '215px': '215px',
+        '120px': '120px',
+        '125px': '125px',
+        '44px': '44px',
+        '42px': '42px',
+        '66px': '66px',
       },
       height: {
         '680': '680px',
+        '196': '196px',
+        '44': '44px',
+        '66': '66px',
+        '120': '120px',
+        '335': '335px',
+      },
+      width: {
+        '680': '680px',
+        '196': '196px',
+        '44': '44px',
+        '66': '66px',
       },
       margin: {
         '870px': '870px',
+      },
+      borderRadius: {
+        5: '20px',
+        4: '16px',
+        3: '12px',
       },
       fontFamily: {
         sans: ['MePoppins', 'sans-serif'],
@@ -67,6 +92,13 @@ const config: Config = {
             fontWeight: '700',
           },
         ],
+        text_sm: [
+          '16px',
+          {
+            lineHeight: '24px',
+            fontWeight: '600',
+          },
+        ],
         label: [
           '16px',
           {
@@ -81,6 +113,7 @@ const config: Config = {
             fontWeight: '700',
           },
         ],
+
         title_sm: [
           '24px',
           {
@@ -92,6 +125,34 @@ const config: Config = {
           '28px',
           {
             lineHeight: '44px',
+            fontWeight: '700',
+          },
+        ],
+        title_32_44_700: [
+          '32px',
+          {
+            lineHeight: '44px',
+            fontWeight: '700',
+          },
+        ],
+        title_56_64_700: [
+          '56px',
+          {
+            lineHeight: '64px',
+            fontWeight: '700',
+          },
+        ],
+        text_15_28_400: [
+          '15px',
+          {
+            lineHeight: '28px',
+            fontWeight: '400',
+          },
+        ],
+        title_20_28_700: [
+          '20px',
+          {
+            lineHeight: '28px',
             fontWeight: '700',
           },
         ],
