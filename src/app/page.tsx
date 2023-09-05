@@ -34,6 +34,7 @@ export default function Home() {
   useEffect(() => {
     slideControl.start('visible');
   }, []);
+
   useEffect(() => {
     const onAnimationComplete = () => {
       setIsHidden(true);
