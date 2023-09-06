@@ -52,10 +52,12 @@ const config: Config = {
         '44': '44px',
         '66': '66px',
         '120': '120px',
+        '162': '162px',
+        '216': '216px',
         '335': '335px',
-        '450': '450px',
         '252': '252px',
         '288': '288px',
+        '450': '450px',
       },
       width: {
         '680': '680px',
@@ -110,6 +112,13 @@ const config: Config = {
           {
             lineHeight: '16px',
             fontWeight: '600',
+          },
+        ],
+        text_13_16_400: [
+          '13px',
+          {
+            lineHeight: '16px',
+            fontWeight: '400',
           },
         ],
         label: [
