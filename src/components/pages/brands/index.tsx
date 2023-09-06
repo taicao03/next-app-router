@@ -2,6 +2,7 @@
 import Navbar from '@/components/common/nav';
 import Button from '@/components/common/ui/button';
 import UiBrandsContent from './content';
+
 const BrandsClient = () => {
   const itemSocial = [
     {
@@ -30,7 +31,7 @@ const BrandsClient = () => {
     },
   ];
   return (
-    <>
+    <div className="">
       <Navbar type={false} />
       <div className="relative -top-20">
         <div className="bg-black bg_main w-full">
@@ -81,7 +82,7 @@ const BrandsClient = () => {
       </div>
       {/* content */}
       <UiBrandsContent />
-    </>
+    </div>
   );
 };
 

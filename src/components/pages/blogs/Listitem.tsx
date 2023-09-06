@@ -1,54 +1,18 @@
-/* eslint-disable prettier/prettier */
 'use client';
 import * as React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
-import { addBlog } from '@/app/actions/demoActions/index';
-import Input from '@/components/common/ui/input';
-import Button from '@/components/common/ui/button';
-import Images from '@/components/common/ui/images';
-import Select from '@/components/common/ui/select';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { Keyboard, Scrollbar, Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css/scrollbar';
+import Navbar from '@/components/common/nav';
+import Brands from './brands';
+import Creator from './creators';
+import Career from './career';
 
-export default function ListItems({ dataAnime }) {
-  const a = [
-    {
-      img: 'https://tse3.mm.bing.net/th?id=OIP.1cI4dxNV3dGWXpu_5HGMCQHaEK&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.bWeddDFd01ZrzWqX9bD4zwAAAA&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse1.mm.bing.net/th?id=OIP.c5LcHm0jmRJ2gkJl55XtgAHaEM&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
-    },
-    {
-      img: 'https://tse4.mm.bing.net/th?id=OIP.YTEOUY823LsgxJGAMhi31AHaGl&pid=Api&P=0&h=180',
-    },
-  ];
+// import { addBlog } from '@/app/actions/demoActions/index';
+
+export default function ListItems() {
   return (
     <>
+      <Navbar type={true} />
       <motion.div
         animate={{
           opacity: 1,
@@ -57,36 +21,13 @@ export default function ListItems({ dataAnime }) {
         initial={{ opacity: 0, y: 20 }}
         exit={{ opacity: 0, y: 20 }}
       >
-        <div className="app">
-          <Swiper
-            className="custom"
-            spaceBetween={0}
-            slidesPerView={3}
-            centeredSlides={true} // Để ảnh ở giữa lớn hơn
-            centeredSlidesBounds={true} // Đảm bảo cả 3 ảnh đều hiển thị thẳng
-            navigation
-            loop
-            modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-            scrollbar={true}
-            pagination={{ clickable: true }}
-          >
-            {a.map((item, index) => (
-              <SwiperSlide key={index} className="">
-                <img src={item?.img} alt="Hình ảnh 1" />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <div className="lg:px-[112px] px-5">
+          <Creator />
+          <Brands />
+          <Career />
         </div>
-        <div className="runningText">
-          <p className="text-black">This is some running text.</p>
-          <p className="text-black">This is some running text.</p>
-          <p className="text-black">This is some running text.</p>
-          <p className="text-black">This is some running text.</p>
-          <p className="text-black">This is some running text.</p>
-          <p className="text-black">This is some running text.</p>
-          <p className="text-black">This is some running text.</p>
-        </div>
-        <form action={addBlog}>
+
+        {/* <form action={addBlog}>
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -125,12 +66,6 @@ export default function ListItems({ dataAnime }) {
                   value=""
                   req={true}
                 />
-                <Select
-                  name=""
-                  label="123"
-                  req=""
-                  parentClass="sm:col-span-3"
-                />
               </div>
             </div>
           </div>
@@ -139,13 +74,9 @@ export default function ListItems({ dataAnime }) {
             <Button type="submit" text="Thêm" classname="" />
             <Button type="button" text="Thêm" classname="" />
           </div>
-        </form>
+        </form> */}
 
-        <div className="hidden">
-          <Images alt="2131" className="" src="img-test.jpg" />
-        </div>
-
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {/* <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {dataAnime.data.map((item) => (
             <Link className="border-none" key={item.id} href={'/'}>
               <div className="overflow-hidden rounded-lg">
@@ -181,7 +112,7 @@ export default function ListItems({ dataAnime }) {
               </div>
             </Link>
           ))}
-        </div>
+        </div> */}
       </motion.div>
     </>
   );

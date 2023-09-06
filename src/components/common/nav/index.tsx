@@ -16,7 +16,7 @@ const navigation = [
   { name: 'For Brands', href: '/brands' },
   { name: 'Blogs', href: '/blogs' },
   { name: 'Library', href: '/library' },
-  { name: 'Contact Us', href: '/contact' },
+  { name: 'Contact Us', href: '/contact-us' },
 ];
 
 export default function Navbar({ type }) {
@@ -46,10 +46,17 @@ export default function Navbar({ type }) {
 
           <div className="flex lg:hidden justify-center items-center">
             <button className="text-black" onClick={handleOpenOffCanvas}>
-              <img src="/images/svg/icon/drop-down.svg" alt="" />
+              <img
+                src={`${
+                  type === false
+                    ? '/images/svg/icon/drop-down-white.svg'
+                    : '/images/svg/icon/drop-down.svg'
+                }`}
+                alt=""
+              />
             </button>
           </div>
-          <div className="md:mx-[112px] hidden md:block">
+          <div className="md:mx-[112px] hidden lg:block">
             <div className="flex">
               <div className="w-3/12">
                 {type === false ? logo?.logoWhite : logo?.logo}

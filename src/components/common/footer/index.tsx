@@ -22,9 +22,9 @@ const UiFollow = [
 
 export default function Foter() {
   return (
-    <div className="bg-white lg:px-[122px] md:px-[72px] px-[18px] md:pt-[52px] border-t border-t-black">
-      <div className="grid-rows-1 grid-flow-row-dense grid md:grid-cols-3 gap-4">
-        <div className="col-span-2 border-b md:border-b-0 border-b-secondary pt-10 pb-8 md:py-0">
+    <div className="bg-white lg:px-[122px] md:px-8 px-[18px] md:pt-[52px] border-t border-t-black">
+      <div className="grid-rows-1 grid-flow-row-dense grid lg:grid-cols-3 gap-4">
+        <div className="col-span-2 border-b lg:border-b-0 border-b-secondary pt-10 pb-8 lg:py-0">
           <div className="relative mb-6">
             <img src="/images/svg/footer.png" className="md:h-40 h-24" alt="" />
             <div className="absolute md:top-20 top-12">
@@ -47,8 +47,8 @@ export default function Foter() {
             </p>
           </div>
         </div>
-        <div className="col-span-2 lg:col-span-1 md:text-end">
-          <div className="md:flex md:justify-end">
+        <div className="col-span-2 lg:col-span-1 lg:text-end">
+          <div className="md:flex lg:justify-end">
             <img src="/images/svg/logo.svg" className="mb-6" alt="" />
           </div>
           <p className="mb-1.5">
@@ -72,7 +72,7 @@ export default function Foter() {
           </p>
           <p className="text-nav text-black mb-4">FOLLOW US</p>
 
-          <div className="flex md:justify-end">
+          <div className="flex lg:justify-end">
             {UiFollow.map((item, index) => (
               <Link
                 key={index}

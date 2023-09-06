@@ -5,7 +5,7 @@ export default function Button({ type, text, classname }) {
     <button
       type={type}
       className={`${
-        type === 'button'
+        type === 'submit'
           ? 'bg-primary rounded-md'
           : 'bg-black rounded-3 rounded-bl-none'
       } ${

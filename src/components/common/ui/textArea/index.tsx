@@ -1,12 +1,13 @@
 import React from 'react';
 
-export default function Input({
+export default function TextArea({
   label,
   name,
   placeholder,
-  value,
   parentClass,
   req,
+  cols,
+  rows,
 }) {
   return (
     <div className={`${parentClass}`}>
@@ -15,16 +16,14 @@ export default function Input({
         {req && <span className="text-red ms-1">*</span>}
       </label>
       <div className="mt-2">
-        <input
-          type="text"
+        <textarea
           name={name}
           id={name}
-          required={req || false}
-          defaultValue={value || ''}
+          className="w-full focus-visible:outline-none"
           placeholder={placeholder || 'Type here'}
-          autoComplete="given-name"
-          className="block w-full"
-        />
+          cols={cols || 10}
+          rows={rows || 10}
+        ></textarea>
       </div>
     </div>
   );
