@@ -11,7 +11,7 @@ export async function getBlogs() {
 }
 
 export async function getDetailBlogs({ slug }) {
-  const res = await fetch(`${process.env.BLOG_API}/:${slug}`);
+  const res = await fetch(`${process.env.BLOG_API}/${slug}`);
 
   if (!res.ok) {
     throw new Error('Failed to fetch data');

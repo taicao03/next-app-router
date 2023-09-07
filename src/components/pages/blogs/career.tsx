@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 export default function BlogCareer({ data }) {
   const iconCenter = `./images/svg/icon/center-blog.svg`;
-  console.log(data);
   return (
     <>
       <div className="lg:my-20 my-8">
