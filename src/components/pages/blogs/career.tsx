@@ -13,7 +13,7 @@ export default function BlogCareer({ data }) {
 
         <div className="grid grid-cols-3 gap-4">
           {data.map((item, index) => (
-            <Link href={`./blog/${item?.id}`} key={index}>
+            <Link href={`/blogs/${item?.id}`} key={index}>
               <div className="col-span-3 md:col-span-1">
                 <div className="md:mb-8 mb-4 image-container">
                   <motion.img
