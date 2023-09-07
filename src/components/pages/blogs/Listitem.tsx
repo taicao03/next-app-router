@@ -9,7 +9,7 @@ import Career from './career';
 
 // import { addBlog } from '@/app/actions/demoActions/index';
 
-export default function ListItems() {
+export default function ListItems({ dataBlogs }) {
   return (
     <>
       <Navbar type={true} />
@@ -24,7 +24,7 @@ export default function ListItems() {
         <div className="lg:px-[112px] px-5">
           <Creator />
           <Brands />
-          <Career />
+          <Career data={dataBlogs} />
         </div>
 
         {/* <form action={addBlog}>
@@ -117,22 +117,12 @@ export default function ListItems() {
     </>
   );
 }
+
 ListItems.propTypes = {
-  dataAnime: PropTypes.shape({
-    data: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number,
-        images: PropTypes.arrayOf(
-          PropTypes.shape({
-            cardImage: PropTypes.number,
-            image_url: PropTypes.string,
-          }),
-        ),
-        atk: PropTypes.number,
-        name: PropTypes.string,
-        level: PropTypes.number,
-        def: PropTypes.number,
-      }),
-    ),
-  }).isRequired,
+  dataBlogs: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      avatar: PropTypes.string,
+    }),
+  ),
 };

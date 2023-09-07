@@ -18,14 +18,6 @@ const nextConfig = {
     appDir: true,
     serverActions: true,
   },
-  async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: '/',
-      },
-    ];
-  },
 
   // i18n,
 };

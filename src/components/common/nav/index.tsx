@@ -34,7 +34,7 @@ export default function Navbar({ type }) {
     <>
       <div className="relative z-30">
         <nav
-          className={`flex md-flex lg:block items-center lg:justify-normal justify-between md:p-7 p-3.5 lg:px-8 `}
+          className={`flex md-flex lg:block items-center lg:justify-normal justify-between md:py-7 py-3.5 lg:px-0 px-5`}
           aria-label="Global"
         >
           <div className="flex lg:flex-1 lg:hidden items-center">

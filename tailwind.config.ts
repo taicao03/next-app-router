@@ -39,6 +39,7 @@ const config: Config = {
         '136px': '136px',
         '60px': '60px',
         '80px': '80px',
+        '100px': '100px',
         '215px': '215px',
         '120px': '120px',
         '125px': '125px',
@@ -58,6 +59,7 @@ const config: Config = {
         '252': '252px',
         '288': '288px',
         '450': '450px',
+        '448': '448px',
       },
       width: {
         '680': '680px',
@@ -73,6 +75,8 @@ const config: Config = {
         4: '16px',
         3: '12px',
         '61px': '61px',
+        '36px': '36px',
+        '500px': '500px',
       },
       fontFamily: {
         sans: ['MePoppins', 'sans-serif'],
@@ -163,6 +167,13 @@ const config: Config = {
             fontWeight: '700',
           },
         ],
+        title_28_36_600: [
+          '28px',
+          {
+            lineHeight: '36px',
+            fontWeight: '600',
+          },
+        ],
         title_56_64_700: [
           '56px',
           {
@@ -217,6 +228,20 @@ const config: Config = {
           {
             lineHeight: '48px',
             fontWeight: '700',
+          },
+        ],
+        title_44_53_700: [
+          '44px',
+          {
+            lineHeight: '52px',
+            fontWeight: '700',
+          },
+        ],
+        title_44_58_600: [
+          '44px',
+          {
+            lineHeight: '58px',
+            fontWeight: '600',
           },
         ],
         title_lg: [

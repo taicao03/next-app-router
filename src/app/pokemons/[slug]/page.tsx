@@ -4,12 +4,6 @@ type BlogProps = {
   params: { slug: string };
 };
 
-// export async function generateStaticParams() {
-//   return Array.from(Array(6).keys()).map((elt) => ({
-//     slug: `${elt}`,
-//   }));
-// }
-
 export function generateMetadata(props: BlogProps): Metadata {
   return {
     title: `Blog ${props.params.slug}`,
