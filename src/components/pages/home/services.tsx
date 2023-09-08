@@ -77,6 +77,7 @@ const UIHomeServices = () => {
           </div>
         </div>
       </div>
+
       <div className="lg:px-[112px] mx-5">
         <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-1 mb-[50px] md:mb-[60px] text-black">
           <div className="md:col-span-2 col-span-3 md:me-4 me-0">

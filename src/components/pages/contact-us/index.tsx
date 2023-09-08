@@ -55,10 +55,10 @@ const Item = () => {
           </div>
 
           <form action="">
-            <div className="">
+            <div className="grid grid-cols-4 gap-8">
               <Input
                 label="Your name"
-                parentClass="sm:col-span-3 mb-8 md:mb-9"
+                parentClass="col-span-4"
                 name="name"
                 placeholder=""
                 value=""
@@ -66,7 +66,7 @@ const Item = () => {
               />
               <Input
                 label="Email address"
-                parentClass="sm:col-span-3 mb-8 md:mb-9"
+                parentClass="md:col-span-2 col-span-4"
                 name="name"
                 placeholder=""
                 value=""
@@ -74,7 +74,7 @@ const Item = () => {
               />
               <Input
                 label="Phone number"
-                parentClass="sm:col-span-3 mb-8 md:mb-9"
+                parentClass="md:col-span-2 col-span-4"
                 name="name"
                 placeholder=""
                 value=""
@@ -83,7 +83,7 @@ const Item = () => {
 
               <Input
                 label="Your brand/ business/ shop name"
-                parentClass="sm:col-span-3 mb-8 md:mb-9"
+                parentClass="md:col-span-2 col-span-4"
                 name="name"
                 placeholder=""
                 value=""
@@ -91,7 +91,7 @@ const Item = () => {
               />
               <Input
                 label="Your brand/ business/ shop name"
-                parentClass="sm:col-span-3 mb-8 md:mb-9"
+                parentClass="md:col-span-2 col-span-4"
                 name="name"
                 placeholder=""
                 value=""
@@ -102,7 +102,7 @@ const Item = () => {
                 label="Business type"
                 req=""
                 data={dataOptions}
-                parentClass="sm:col-span-3 mb-8 md:mb-9"
+                parentClass="md:col-span-2 col-span-4"
               />
 
               <Select
@@ -110,7 +110,7 @@ const Item = () => {
                 label="Industry"
                 req=""
                 data={dataOptions}
-                parentClass="sm:col-span-3 mb-8 md:mb-9"
+                parentClass="md:col-span-2 col-span-4"
               />
               <TextArea
                 name=""
@@ -118,7 +118,7 @@ const Item = () => {
                 cols={0}
                 rows={5}
                 label="Message"
-                parentClass="w-full"
+                parentClass="col-span-4"
                 placeholder=""
               />
             </div>

@@ -38,8 +38,8 @@ export default function BlogCreators() {
 
           <div className="gap-4 col-span-3 lg:col-span-1 md:col-span-3 mb-0 md:block hidden">
             {Array.from({ length: 4 }, (_, index) => (
-              <div className="grid grid-cols-4 gap-4" key={index}>
-                <div className="md:col-span-1 lg:col-span-2 col-span-4">
+              <div className="grid grid-cols-5 gap-4" key={index}>
+                <div className="md:col-span-1 lg:col-span-2 col-span-5">
                   <Link href="" className="cursor-pointer">
                     <div className={`lg:mb-8 md:mb-4 mb-4 image-container`}>
                       <motion.img
@@ -58,15 +58,16 @@ export default function BlogCreators() {
                     </div>
                   </Link>
                 </div>
-                <div className="md:col-span-2 col-span-4">
+
+                <div className="md:col-span-3 col-span-5">
                   <Link href="" className="cursor-pointer">
                     <p className="text-black text-title_20_28_700 md:mb-3 mb-2 hover:underline hover:text-primary">
                       {'The Ultimate Freelance Solution For Businesses'}
                     </p>
                   </Link>
-                  <div className="flex">
+                  <div className="flex lg:whitespace-nowrap">
                     <p className="text-gray text_13_16_600">By Metub Team</p>
-                    <img src={iconCenter} alt="" className="mx-5" />
+                    <img src={iconCenter} alt="" className="mx-2" />
                     <p className="text-gray text_13_16_600">Feb 2023</p>
                   </div>
                 </div>
@@ -74,6 +75,7 @@ export default function BlogCreators() {
             ))}
           </div>
 
+          {/* MOBILE */}
           <div className="gap-4 col-span-3 lg:col-span-1 md:col-span-3 mb-0 md:hidden">
             <Swiper slidesPerView={1.3} spaceBetween={20}>
               {Array.from({ length: 4 }, (_, index) => (

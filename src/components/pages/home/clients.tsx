@@ -2,15 +2,6 @@
 import React from 'react';
 
 const UIHomeClient = () => {
-  const data = [
-    '/images/svg/client_svg/heineken.svg',
-    '/images/svg/client_svg/heineken.svg',
-    '/images/svg/client_svg/heineken.svg',
-    '/images/svg/client_svg/heineken.svg',
-    '/images/svg/client_svg/heineken.svg',
-    '/images/svg/client_svg/heineken.svg',
-  ];
-
   return (
     <div className="w-full md:mb-[120px] mb-[60px]">
       <div className="h-auto bg_main py-[125px] overflow-x-hidden">
@@ -24,37 +15,55 @@ const UIHomeClient = () => {
             multiple categories
           </p>
         </div>
-        <div className="wrapper-run">
+
+        <div className="wrapper-run md:mb-10 mb-4">
           <div className="marquee">
             <div className="runningLeft">
-              {data.map((item, index) => (
-                <div className="imageGroup" key={index}>
-                  <img src={item} className="mr-10 test-2" alt="" />
+              {Array.from({ length: 5 }, (_, index) => (
+                <div className="imageGroup md:m-0" key={index}>
+                  <img
+                    src={`/images/svg/brands_svg/item_${1 + index}.svg`}
+                    className=""
+                    alt=""
+                  />
                 </div>
               ))}
             </div>
             <div className="runningLeft">
-              {data.map((item, index) => (
-                <div className="imageGroup" key={index}>
-                  <img src={item} className="mr-10 test-2" alt="" />
+              {Array.from({ length: 5 }, (_, index) => (
+                <div className="imageGroup md:m-0" key={index}>
+                  <img
+                    src={`/images/svg/brands_svg/item_${1 + index}.svg`}
+                    className=""
+                    alt=""
+                  />
                 </div>
               ))}
             </div>
           </div>
         </div>
+
         <div className="wrapper-run">
           <div className="marquee">
             <div className="runningRight">
-              {data.map((item, index) => (
-                <div className="imageGroup" key={index}>
-                  <img src={item} className="mr-10" alt="" />
+              {Array.from({ length: 5 }, (_, index) => (
+                <div className="imageGroup md:m-0" key={index}>
+                  <img
+                    src={`/images/svg/brands_svg/item_${6 + index}.svg`}
+                    className=""
+                    alt=""
+                  />
                 </div>
               ))}
             </div>
             <div className="runningRight">
-              {data.map((item, index) => (
-                <div className="imageGroup" key={index}>
-                  <img src={item} className="mr-10" alt="" />
+              {Array.from({ length: 5 }, (_, index) => (
+                <div className="imageGroup  md:m-0" key={index}>
+                  <img
+                    src={`/images/svg/brands_svg/item_${6 + index}.svg`}
+                    className=""
+                    alt=""
+                  />
                 </div>
               ))}
             </div>
