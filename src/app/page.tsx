@@ -71,10 +71,10 @@ export default function Home() {
         <Section>
           <UICreator />
         </Section>
-        <UIHomeClient />
         <Section>
           <UIHomeServices />
         </Section>
+        <UIHomeClient />
 
         {/* ANIMATION */}
         <div className="md:block hidden">

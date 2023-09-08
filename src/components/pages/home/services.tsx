@@ -1,78 +1,129 @@
 'use client';
 
-// import Link from 'next/link';
-import Button from '@/components/common/ui/button';
+import Link from 'next/link';
 
-const UIServices = [
+const UITSPServices = [
   {
-    title: 'Video Content Consultant',
-    icon: '/images/svg/services_svg/channel.svg',
+    title: 'Content Direction',
+    icon: '/images/svg/services_svg/item_1.svg',
   },
   {
-    title: 'Video Content Consultant',
-    icon: '/images/svg/services_svg/creator.svg',
+    title: 'Livestream Optimization',
+    icon: '/images/svg/services_svg/item_2.svg',
   },
   {
-    title: 'Video Content Consultant',
-    icon: '/images/svg/services_svg/livestream.svg',
+    title: 'Livestream Optimization',
+    icon: '/images/svg/services_svg/item_3.svg',
   },
   {
-    title: 'Video Content Consultant',
-    icon: '/images/svg/services_svg/video.svg',
+    title: 'Livestream Optimization',
+    icon: '/images/svg/services_svg/item_4.svg',
   },
 ];
 
 const UIHomeServices = () => {
   return (
     <>
-      <div className="lg:px-[215px] mb-[136px] mx-5">
+      <div className="lg:px-[112px] mb-[136px] px-5">
         <div className="text-center uppercase md:mb-16 mb-[60px]">
           <div className="text-primary mb-4 text-title_sm">OUR SERVICES</div>
           <div className="md:text-title_lg text-title_32_44_700">
             <span className="text-black">Unlock the</span>
-            <span className="split-text md:ms-1">power of your passion</span>
+            <br />
+            <span className="split-text ms-1">power of your passion</span>
           </div>
         </div>
 
-        <div className="md:flex">
-          <div className="md:w-6/12">
-            <h2 className="text-primary text-title_md md:mb-14 mb-8">
-              TSP Services
-            </h2>
-            {UIServices.map((item, index) => (
-              <div className="flex md:mb-12 items-center mb-6" key={index}>
-                <img
-                  src={item?.icon}
-                  alt=""
-                  className="md:w-[66px] md:h-[66px] w-[44px] h-[44px]"
-                />
-                <p className="ms-5 text-black md:text-title text-text_sm">
-                  {item?.title}
-                </p>
+        <div className="">
+          <h2 className="text-black text-title_md md:mb-11 mb-8">
+            TSP Services
+          </h2>
+          <div className="grid grid-cols-5 gap-5">
+            {UITSPServices.map((item, index) => (
+              <div className="md:col-span-1 col-span-5" key={index}>
+                <div
+                  className="md:mb-12 flex items-center md:block"
+                  key={index}
+                >
+                  <div className="flex justify-center">
+                    <div className="border border-primary md:py-4 md:px-5 py-2 px-2.5 rounded-full">
+                      <img
+                        src={item?.icon}
+                        alt=""
+                        className="md:w-[52px] md:h-[52px] w-[32px] h-[32px]"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-center text-black ms-3 md:ms-0 md:text-title_20_32_600 text-text_sm md:mt-4">
+                    {item?.title}
+                  </p>
+                </div>
               </div>
             ))}
-            <div className="mb-[60px] md:mb-0">
-              <Button text={`See more >>`} type="" classname="px-[60px] py-4" />
+            <div className="md:col-span-1 col-span-5">
+              <div className="md:mb-12 mb-6 flex items-center md:block">
+                <div className="flex justify-center">
+                  <div className="bg-black md:py-4 md:px-5 py-2 px-2.5 rounded-full">
+                    <img
+                      src="/images/svg/services_svg/see-more.svg"
+                      alt=""
+                      className="md:w-[52px] md:h-[52px] w-[32px] h-[32px]"
+                    />
+                  </div>
+                </div>
+                <Link href="" className="cursor-pointer">
+                  <p className="text-center text-black ms-3 md:ms-0 md:text-title_20_32_600 text-text_sm md:mt-4">
+                    {'See more >>'}
+                  </p>
+                </Link>
+              </div>
             </div>
           </div>
-          <div className="md:w-6/12">
-            <h2 className="text-primary text-title_md md:mb-14 mb-8">
-              MCN Services
-            </h2>
-            {UIServices.map((item, index) => (
-              <div key={index} className="flex md:mb-12 items-center mb-6">
-                <img
-                  src={item?.icon}
-                  alt=""
-                  className="md:w-[66px] md:h-[66px] w-[44px] h-[44px]"
-                />
-                <p className="ms-5 text-black md:text-title text-text_sm">
-                  {item?.title}
-                </p>
+        </div>
+
+        <div className="">
+          <h2 className="text-black text-title_md md:mb-11 mb-8">
+            MCN Services
+          </h2>
+          <div className="grid grid-cols-5 gap-5">
+            {UITSPServices.map((item, index) => (
+              <div className="md:col-span-1 col-span-5" key={index}>
+                <div
+                  className="md:mb-12 flex items-center md:block"
+                  key={index}
+                >
+                  <div className="flex justify-center">
+                    <div className="border border-primary md:py-4 md:px-5 py-2 px-2.5 rounded-full">
+                      <img
+                        src={item?.icon}
+                        alt=""
+                        className="md:w-[52px] md:h-[52px] w-[32px] h-[32px]"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-center text-black ms-3 md:ms-0 md:text-title_20_32_600 text-text_sm md:mt-4">
+                    {item?.title}
+                  </p>
+                </div>
               </div>
             ))}
-            <div className="mb-[60px] md:mb-0">
-              <Button text={`See more >>`} type="" classname="px-[60px] py-4" />
+            <div className="md:col-span-1 col-span-5">
+              <div className="md:mb-12 mb-6 flex items-center md:block">
+                <div className="flex justify-center">
+                  <div className="bg-black md:py-4 md:px-5 py-2 px-2.5 rounded-full">
+                    <img
+                      src="/images/svg/services_svg/see-more.svg"
+                      alt=""
+                      className="md:w-[52px] md:h-[52px] w-[32px] h-[32px]"
+                    />
+                  </div>
+                </div>
+                <Link href="" className="cursor-pointer">
+                  <p className="text-center text-black ms-3 md:ms-0 md:text-title_20_32_600 text-text_sm md:mt-4">
+                    {'See more >>'}
+                  </p>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -124,7 +175,7 @@ const UIHomeServices = () => {
           </div>
         </div>
         <div className="md:flex">
-          {UIServices.map((item, index) => (
+          {UITSPServices.map((item, index) => (
             <div
               key={index}
               className="md:w-3/12 flex md:block items-center mb-6 md:mb-0"
