@@ -6,7 +6,6 @@ import Slider from '@/components/common/ui/slider-creator/index';
 import PropTypes from 'prop-types';
 
 export default function Creator({ data }) {
-  console.log(data);
   const UIcanOFFER = [
     {
       title: 'Content Direction',

@@ -19,6 +19,5 @@ export default async function BlogsDetail({
   params: { slug: string };
 }) {
   const data = await getDetailBlogs({ slug: params.slug });
-  console.log(data);
   return <>{<ListItems dataDetailBlogs={data} />}</>;
 }

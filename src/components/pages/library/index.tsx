@@ -38,7 +38,7 @@ const LibraryItem = () => {
                   key={index}
                   onKeyDown={handleClick}
                   onClick={() => handleClick(item?.value)}
-                  className={`py-2 md:px-10 px-4 rounded-61px text-center md:text-text_sm text-text_13_16_600 ${
+                  className={`py-2 md:px-10 px-4 cursor-pointer rounded-61px text-center md:text-text_sm text-text_13_16_600 ${
                     item?.value === isFiled
                       ? 'bg-primary'
                       : 'border border-border text-black'

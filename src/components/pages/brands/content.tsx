@@ -24,10 +24,38 @@ const UiBrandsContent = () => {
       text: 'meLive has a wide network of creators who will always achieve the goals you are aiming for.',
     },
   ];
+  // const UIcanOFFER = [
+  //   {
+  //     title: 'Content Direction',
+  //     icon: './images/svg/creator_svg/content.svg',
+  //     text: 'Giving advices to creators for  developing tiktok channel.',
+  //   },
+  //   {
+  //     title: 'Channel Optimization',
+  //     icon: './images/svg/creator_svg/channel.svg',
+  //     text: "As TikTok Shop specialist, meLive takes care & optimize creator's channel.",
+  //   },
+  //   {
+  //     title: 'Livestream Optimization',
+  //     icon: './images/svg/creator_svg/livestream-white.svg',
+  //     text: 'Training and optimizing the efficiency of livestream operation',
+  //   },
+  //   {
+  //     title: 'Brand Collaboration',
+  //     icon: './images/svg/creator_svg/brand.svg',
+  //     text: 'Connect & Create opportunities for cooperation with the reputational brands',
+  //   },
+  //   {
+  //     title: 'BE OUR EXCLUSIVE CREATOR!',
+  //     icon: './images/svg/creator_svg/creator.svg',
+  //     text: 'And received unique benefits & support from',
+  //     des: 'THE PASSION TEAM.',
+  //   },
+  // ];
 
   return (
     <>
-      <div className="lg:mx-[112px] lg:my-[120px] mt-0 mx-5">
+      <div className="lg:mx-[112px] lg:mb-[60px] mt-0 mx-5">
         <p className="md:text-title_56_64_700 text-title_32_44_700 text-black uppercase">
           Discover our <br />
           <span className="split-text">

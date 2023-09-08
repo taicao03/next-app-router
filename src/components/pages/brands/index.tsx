@@ -30,14 +30,15 @@ const BrandsClient = () => {
       text: 'YOUTUBE',
     },
   ];
+
   return (
     <div className="">
       <Navbar type={false} />
       <div className="relative -top-20">
         <div className="bg-black bg_main w-full">
-          <div className="md:flex mx-2.5 py-[120px] md:px-[112px]">
-            <div className="md:w-6/12">
-              <p className="uppercase md:mb-9 mb-8 md:text-center px-2.5 md:px-0 text-title_32_44_700 md:text-title_lg text-white">
+          <div className="grid grid-cols-4 mx-2.5 py-[120px] md:px-[112px]">
+            <div className="md:col-span-2 col-span-4">
+              <p className="uppercase md:mb-9 mb-8 md:text-left px-2.5 md:px-0 text-title_32_44_700 md:text-title_lg text-white">
                 {`we're Proud to be a long-term companion of`}
                 <span className="split-text ms-1">
                   {`vietnam's leading brands`}
@@ -46,11 +47,23 @@ const BrandsClient = () => {
               </p>
               <Button
                 type=""
-                classname="bg-white text-primary"
+                classname="bg-white text-primary py-4 px-[60px]"
                 text={`See more`}
               />
             </div>
-            <div className="md:w-6/12"></div>
+            <div className="md:col-span-2 col-span-4 mt-20">
+              <div className="grid grid-cols-3 gap-4">
+                {Array.from({ length: 9 }, (_, index) => (
+                  <div className="col-span-1" key={index}>
+                    <img
+                      src={`/images/svg/brands_svg/item_${index + 1}.svg`}
+                      className=""
+                      alt=""
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <div className="bg-primary overflow-x-hidden py-[42px] text-title_sm">

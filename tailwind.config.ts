@@ -53,10 +53,14 @@ const config: Config = {
         '44': '44px',
         '66': '66px',
         '120': '120px',
+        '192': '192px',
         '162': '162px',
         '216': '216px',
+        '210': '210px',
         '335': '335px',
+        '344': '344px',
         '252': '252px',
+        '257': '257px',
         '288': '288px',
         '450': '450px',
         '448': '448px',
@@ -118,11 +122,26 @@ const config: Config = {
             fontWeight: '600',
           },
         ],
+
         text_13_16_400: [
           '13px',
           {
             lineHeight: '16px',
             fontWeight: '400',
+          },
+        ],
+        text_13_22_400: [
+          '13px',
+          {
+            lineHeight: '22px',
+            fontWeight: '400',
+          },
+        ],
+        text_13_22_600: [
+          '13px',
+          {
+            lineHeight: '22px',
+            fontWeight: '600',
           },
         ],
         label: [
@@ -174,6 +193,13 @@ const config: Config = {
             fontWeight: '600',
           },
         ],
+        title_28_32_700: [
+          '28px',
+          {
+            lineHeight: '32px',
+            fontWeight: '700',
+          },
+        ],
         title_56_64_700: [
           '56px',
           {
@@ -207,6 +233,20 @@ const config: Config = {
           {
             lineHeight: '32px',
             fontWeight: '600',
+          },
+        ],
+        title_20_32_700: [
+          '20px',
+          {
+            lineHeight: '32px',
+            fontWeight: '700',
+          },
+        ],
+        title_20_32_400: [
+          '20px',
+          {
+            lineHeight: '32px',
+            fontWeight: '400',
           },
         ],
         title_32_40_600: [
@@ -265,7 +305,6 @@ const config: Config = {
             fontWeight: '700',
           },
         ],
-
         header: [
           '20px',
           {
