@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -267,6 +268,13 @@ const config: Config = {
           '36px',
           {
             lineHeight: '48px',
+            fontWeight: '700',
+          },
+        ],
+         title_48_64_700: [
+          '48px',
+          {
+            lineHeight: '64px',
             fontWeight: '700',
           },
         ],
