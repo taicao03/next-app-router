@@ -104,7 +104,7 @@ const UIHomeServices = () => {
                     />
                   </div>
                 </div>
-                <Link href="" className="cursor-pointer">
+                <Link href="/" className="cursor-pointer">
                   <p className="text-center text-black ms-3 md:ms-0 md:text-title_20_32_600 text-text_sm md:mt-4">
                     {'See more >>'}
                   </p>
@@ -151,7 +151,7 @@ const UIHomeServices = () => {
                     />
                   </div>
                 </div>
-                <Link href="" className="cursor-pointer">
+                <Link href="/" className="cursor-pointer">
                   <p className="text-center text-black ms-3 md:ms-0 md:text-title_20_32_600 text-text_sm md:mt-4">
                     {'See more >>'}
                   </p>

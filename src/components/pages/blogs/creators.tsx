@@ -16,7 +16,7 @@ export default function BlogCreators() {
 
         <div className="grid grid-cols-3 gap-4">
           <div className="lg:col-span-2 md:col-span-3 col-span-3">
-            <Link href="" className="cursor-pointer">
+            <Link href="/" className="cursor-pointer">
               <div className="md:mb-8 mb-4">
                 <img
                   src="./images/test.jpg"
@@ -40,7 +40,7 @@ export default function BlogCreators() {
             {Array.from({ length: 4 }, (_, index) => (
               <div className="grid grid-cols-5 gap-4" key={index}>
                 <div className="md:col-span-1 lg:col-span-2 col-span-5">
-                  <Link href="" className="cursor-pointer">
+                  <Link href="/" className="cursor-pointer">
                     <div className={`lg:mb-8 md:mb-4 mb-4 image-container`}>
                       <motion.img
                         src="./images/test.jpg"
@@ -60,7 +60,7 @@ export default function BlogCreators() {
                 </div>
 
                 <div className="md:col-span-3 col-span-5">
-                  <Link href="" className="cursor-pointer">
+                  <Link href="/" className="cursor-pointer">
                     <p className="text-black text-title_20_28_700 md:mb-3 mb-2 hover:underline hover:text-primary">
                       {'The Ultimate Freelance Solution For Businesses'}
                     </p>
@@ -82,7 +82,7 @@ export default function BlogCreators() {
                 <SwiperSlide key={index}>
                   <div className="grid grid-cols-4 gap-4">
                     <div className="md:col-span-1 lg:col-span-2 col-span-4">
-                      <Link href="" className="cursor-pointer">
+                      <Link href="/" className="cursor-pointer">
                         <div className={`lg:mb-8 md:mb-4 mb-4 image-container`}>
                           <motion.img
                             src="./images/test.jpg"
@@ -101,7 +101,7 @@ export default function BlogCreators() {
                       </Link>
                     </div>
                     <div className="md:col-span-2 col-span-4">
-                      <Link href="" className="cursor-pointer">
+                      <Link href="/" className="cursor-pointer">
                         <p className="text-black text-title_20_28_700 md:mb-3 mb-2 hover:underline hover:text-primary">
                           {'The Ultimate Freelance Solution For Businesses'}
                         </p>

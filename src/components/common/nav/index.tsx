@@ -88,10 +88,13 @@ export default function Navbar({ type }) {
 
       <OffCanvas isOpen={isOffCanvasOpen} onClose={handleCloseOffCanvas}>
         {navigation.map((item, index) => (
-          <div key={index}>
+          <div key={index} className="p-2">
             <Link
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className={`text-nav ${
+                item?.href === path ? 'text-primary' : 'text-black'
+              }
+        `}
             >
               {item.name}
             </Link>

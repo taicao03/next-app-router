@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Button from '@/components/common/ui/button';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -15,14 +16,14 @@ export default function SliderCarouse({ data }) {
 
   return (
     <div className="grid grid-cols-4 gap-4">
-      <div className="md:col-span-2 col-span-4">
+      <div className="lg:col-span-2 col-span-4 relative">
         <Swiper
           className="custom"
           spaceBetween={0}
           slidesPerView={3}
           centeredSlides={true} // Để ảnh ở giữa lớn hơn
           centeredSlidesBounds={true} // Đảm bảo cả 3 ảnh đều hiển thị thẳng
-          navigation
+          navigation={{ nextEl: '.carousel-next', prevEl: '.carousel-prev' }}
           loop
           thumbs={{ swiper: thumbsSwiper }}
           modules={[Scrollbar, Thumbs, Navigation, Pagination]}
@@ -30,26 +31,35 @@ export default function SliderCarouse({ data }) {
           pagination={{ clickable: true }}
         >
           {data.map((item, index) => (
-            <SwiperSlide key={index} className="">
-              <img src={item?.img} alt="Hình ảnh 1" />
+            <SwiperSlide key={index}>
+              <motion.img
+                src={item?.img}
+                alt={item + index}
+                className="my-[60px]"
+              />
             </SwiperSlide>
           ))}
+          <div className="flex justify-between absolute top-2/4 lg:right-0 lg:left-0 md:right-12 md:left-12 left-4 right-4 z-10">
+            <button className="carousel-next bg-white p-3 rounded-full border border-border">
+              <img src="/images/svg/icon/chevron-left.svg" alt="" />
+            </button>
+            <button className="carousel-prev p-3 bg-primary rounded-full">
+              <img src="/images/svg/icon/chevron-right.svg" alt="" />
+            </button>
+          </div>
         </Swiper>
       </div>
-      <div className="md:col-span-2 col-span-4">
+      <div className="lg:col-span-2 col-span-4">
         <Swiper
           className=""
           loop={true}
           spaceBetween={10}
-          navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}
           slidesPerView={1}
           onSwiper={handleSwiperInit}
           modules={[Scrollbar, Navigation, Pagination, Thumbs]}
-          // scrollbar={true}
-          pagination={{ clickable: true }}
         >
           {data.map((item, index) => (
-            <SwiperSlide key={index} className="">
+            <SwiperSlide key={index} className="px-5 md:px-0">
               <h2 className="text-title_sm text-black mb-3">Châu Bùi</h2>
               <Link
                 href={'/'}

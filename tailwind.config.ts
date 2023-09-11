@@ -27,6 +27,7 @@ const config: Config = {
         md: '768px',
         lg: '991px',
         xl: '1199px',
+        xxl: '1500px',
       },
       padding: {
         '111px': '111px',
@@ -271,7 +272,7 @@ const config: Config = {
             fontWeight: '700',
           },
         ],
-         title_48_64_700: [
+        title_48_64_700: [
           '48px',
           {
             lineHeight: '64px',

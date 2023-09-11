@@ -112,7 +112,10 @@ const UIHomeClient = () => {
 
           <div className="md:col-span-1 col-span-3">
             {Text.map((item, index) => (
-              <div className="flex md:mb-9 mb-6 items-baseline" key={index}>
+              <div
+                className="flex xxl:mb-20 md:mb-9 mb-6 items-baseline"
+                key={index}
+              >
                 <img
                   src="/images/svg/services_svg/icon_services.svg"
                   alt=""

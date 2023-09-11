@@ -16,7 +16,7 @@ export default function BlogBrands() {
         <div className="grid grid-cols-3 gap-4">
           {Array.from({ length: 3 }, (_, index) => (
             <div key={index} className="col-span-3 md:col-span-1">
-              <Link href="" className="cursor-pointer">
+              <Link href="/" className="cursor-pointer">
                 <div className="md:mb-8 mb-4 image-container">
                   <motion.img
                     src="./images/test.jpg"

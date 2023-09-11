@@ -17,7 +17,7 @@ export default function Orther({ dataOther }) {
             key={index}
           >
             <div className="col-span-3 md:col-span-1 image-container">
-              <Link href="" className="cursor-pointer">
+              <Link href="/" className="cursor-pointer">
                 <motion.img
                   src="/images/test.jpg"
                   initial={{ opacity: 0, x: 20 }}
@@ -30,7 +30,7 @@ export default function Orther({ dataOther }) {
               </Link>
             </div>
             <div className="col-span-3 md:col-span-2">
-              <Link href="" className="cursor-pointer">
+              <Link href="/" className="cursor-pointer">
                 <h3 className="text-black md:text-title_20_32_700 mb-2 text-title_20_32_700 hover:underline hover:text-primary">
                   {`Why visual identity is crucial to a Creator's success`}
                 </h3>

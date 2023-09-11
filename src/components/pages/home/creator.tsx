@@ -38,8 +38,8 @@ const UICreator = () => {
     },
   ];
   return (
-    <div className="lg:px-[133px] mx-2.5">
-      <div className="mb-14">
+    <div className="lg:px-[133px]">
+      <div className="mb-14 md:px-0 px-5">
         <h2 className="md:text-title_sm mb-4 text-primary md:text-center text-title_20_28_700">
           OUR CREATOR
         </h2>
