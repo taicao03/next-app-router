@@ -3,6 +3,8 @@ import Navbar from '@/components/common/nav';
 import { motion } from 'framer-motion';
 import Button from '@/components/common/ui/button';
 import Slider from '@/components/common/ui/slider-creator/index';
+import SliderCarousel from '@/components/common/ui/slider-carouse-one/index';
+
 import PropTypes from 'prop-types';
 
 export default function Creator({ data }) {
@@ -47,10 +49,10 @@ export default function Creator({ data }) {
         initial={{ opacity: 0, y: 20 }}
         exit={{ opacity: 0, y: 20 }}
       >
-        <div className="lg:px-[112px] px-5">
+        <div className="lg:px-[112px]">
           <div className="grid grid-cols-2 gap-4 md:mb-[100px] mb-[60px]">
-            <div className="md:col-span-1 col-span-2">
-              <p className="uppercase md:mb-9 text-left mb-8 md:px-0 text-title_44_53_700 lg:text-title_lg text-black">
+            <div className="md:col-span-1 col-span-2 md:px-0 px-5">
+              <p className="uppercase md:mb-9 text-left mb-8 text-title_44_53_700 lg:text-title_64_76_700 text-black">
                 Meet our
                 <br />
                 <span className="split-text">
@@ -61,12 +63,12 @@ export default function Creator({ data }) {
               </p>
               <Button type="buton" text="See more >>" classname="px-14 py-4" />
             </div>
-            <div className="md:col-span-1 col-span-2">
-              <div className="text-black">dadsa</div>
+            <div className="md:col-span-1 col-span-2 mt-8 md:mt-0">
+              <SliderCarousel data={data} />
             </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-4 md:mb-[100px] mb-[60px]">
+          <div className="grid grid-cols-4 gap-4 md:mb-[100px] mb-[60px] md:px-0 px-5">
             <div className="md:col-span-1 col-span-4">
               <p className="uppercase md:mb-9 text-left mb-8 md:px-0 text-title_44_53_700 lg:text-title_lg text-black">
                 WE <br className="hidden md:block" /> can

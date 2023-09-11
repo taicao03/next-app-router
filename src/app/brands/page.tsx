@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Children from '@/components/pages/brands/index';
+import { getTest } from '@/app/api/free/free';
 
 export const metadata: Metadata = {
   title: 'For Brands',
@@ -7,9 +8,11 @@ export const metadata: Metadata = {
 };
 
 const Brands = async () => {
+  const data = await getTest();
+
   return (
     <>
-      <Children />
+      <Children data={data} />
     </>
   );
 };

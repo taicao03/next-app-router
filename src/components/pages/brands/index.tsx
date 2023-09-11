@@ -3,7 +3,7 @@ import Navbar from '@/components/common/nav';
 import Button from '@/components/common/ui/button';
 import UiBrandsContent from './content';
 
-const BrandsClient = () => {
+const BrandsClient = ({ data }) => {
   const itemSocial = [
     {
       icon: '/images/svg/icon/social-isn.svg',
@@ -94,7 +94,7 @@ const BrandsClient = () => {
         </div>
       </div>
       {/* content */}
-      <UiBrandsContent />
+      <UiBrandsContent data={data} />
     </div>
   );
 };

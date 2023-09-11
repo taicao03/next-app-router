@@ -293,6 +293,13 @@ const config: Config = {
             fontWeight: '600',
           },
         ],
+        title_64_76_700: [
+          '64px',
+          {
+            lineHeight: '76px',
+            fontWeight: '700',
+          },
+        ],
         title_lg: [
           '48px',
           {

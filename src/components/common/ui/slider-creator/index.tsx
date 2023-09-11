@@ -9,6 +9,7 @@ import {
   Pagination,
   FreeMode,
   Thumbs,
+  Autoplay,
 } from 'swiper/modules';
 import 'swiper/css/scrollbar';
 import 'swiper/css/free-mode';
@@ -32,8 +33,18 @@ export default function SliderCarouse({ data }) {
             navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}
             slidesPerView={1}
             thumbs={{ swiper: thumbsSwiper }}
-            modules={[Scrollbar, FreeMode, Navigation, Pagination, Thumbs]}
-            // scrollbar={true}
+            modules={[
+              Scrollbar,
+              FreeMode,
+              Navigation,
+              Pagination,
+              Thumbs,
+              Autoplay,
+            ]}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             pagination={{ clickable: true }}
           >
             {data.map((item, index) => (

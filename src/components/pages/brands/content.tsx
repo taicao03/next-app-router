@@ -1,7 +1,7 @@
 'use client';
 import Button from '@/components/common/ui/button';
-
-const UiBrandsContent = () => {
+import Slider from '@/components/common/ui/slider-carouce-brand/index';
+const UiBrandsContent = ({ data }) => {
   const creatorConnect = [
     {
       title: 'Content Direction',
@@ -199,52 +199,7 @@ const UiBrandsContent = () => {
         </div>
       </div>
       <div className="lg:px-[112px] pt-9 pb-20 lg:py-32 mx-5">
-        <div className="md:flex">
-          <div className="md:w-6/12"></div>
-          <div className="md:w-6/12">
-            <div className="mb-6 md:mb-8">
-              <div className="mb-1 md:text-title_32_40_600 md:mb-3 text-black text-title_sm">
-                <span>Thuy Tien</span>
-                <span className="mx-3">X</span>
-              </div>
-              <p className="text-primary md:mb-4 mb-1 text-text_15_28_500">
-                Oct 2022
-              </p>
-              <p className="text-gray md:text-title_20_36_400 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud. Ut enim ad minim veniam,
-                quis nostrud. Ut enim ad minim veniam, quis nostrud.
-              </p>
-            </div>
-            <div className="flex flex-wrap">
-              <div className="lg:w-3/12 w-3/6 mb-5 md:mb-0">
-                <p className="mb-1 uppercase md:text-title_36_44_600 text-title_md text-primary">
-                  $54K
-                </p>
-                <p className="text-gray text-text_sm">REVENUE</p>
-              </div>
-              <div className="lg:w-3/12 w-3/6 mb-5 md:mb-0">
-                <p className="mb-1 uppercase md:text-title_36_44_600 text-title_md text-primary">
-                  $54K
-                </p>
-                <p className="text-gray text-text_sm">REACH</p>
-              </div>
-              <div className="lg:w-3/12 w-3/6 mb-5 md:mb-0">
-                <p className="mb-1 uppercase md:text-title_36_44_600 text-title_md text-primary">
-                  $54K
-                </p>
-                <p className="text-gray text-text_sm">REACTIONS</p>
-              </div>
-              <div className="lg:w-3/12 w-3/6 mb-5 md:mb-0">
-                <p className="mb-1 uppercase md:text-title_36_44_600 text-title_md text-primary">
-                  $54K
-                </p>
-                <p className="text-gray text-text_sm">METIONS</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Slider data={data} />
       </div>
     </>
   );
