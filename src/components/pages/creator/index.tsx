@@ -51,8 +51,8 @@ export default function Creator({ data }) {
       >
         <div className="lg:px-[112px]">
           <div className="grid grid-cols-2 gap-4 md:mb-[100px] mb-[60px]">
-            <div className="md:col-span-1 col-span-2 md:px-0 px-5">
-              <p className="uppercase md:mb-9 text-left mb-8 text-title_44_53_700 lg:text-title_64_76_700 text-black">
+            <div className="lg:col-span-1 col-span-2 px-5">
+              <p className="uppercase md:mb-9 text-left mb-8 text-title_44_53_700 md:text-title_64_76_700 text-black">
                 Meet our
                 <br />
                 <span className="split-text">
@@ -63,12 +63,12 @@ export default function Creator({ data }) {
               </p>
               <Button type="buton" text="See more >>" classname="px-14 py-4" />
             </div>
-            <div className="md:col-span-1 col-span-2 mt-8 md:mt-0">
+            <div className="lg:col-span-1 col-span-2 mt-8 md:mt-0">
               <SliderCarousel data={data} />
             </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-4 md:mb-[100px] mb-[60px] md:px-0 px-5">
+          <div className="grid grid-cols-4 gap-4 md:mb-[100px] mb-[60px] px-5 relative z-5">
             <div className="md:col-span-1 col-span-4">
               <p className="uppercase md:mb-9 text-left mb-8 md:px-0 text-title_44_53_700 lg:text-title_lg text-black">
                 WE <br className="hidden md:block" /> can
@@ -135,24 +135,50 @@ export default function Creator({ data }) {
           </div>
         </div>
 
-        <div className="bg_main lg:px-[112px] px-5">
+        <div className="bg_main lg:px-[112px]">
           <div className="grid grid-cols-2 gap-4">
-            <div className="md:col-span-1 col-span-2">
-              <p className="uppercase md:mb-9 text-left mb-8 md:px-0 text-title_44_53_700 lg:text-title_lg text-white">
-                One CLICK away from your
-                <br className="md:block hidden" />
-                <span className="split-text ms-1">passion crew</span>
-                <br />
-              </p>
-
-              <Button
-                type="buton"
-                text="Join now >>"
-                classname="px-14 py-4 md:px-6 bg-white text-primary"
-              />
+            <div className="md:col-span-1 col-span-2 flex items-center px-5 lg:px-0">
+              <div className="">
+                <p className="uppercase md:mb-9 text-left mb-8 md:px-0 text-title_44_53_700 lg:text-title_64_76_700 text-white">
+                  One CLICK away from your
+                  <br className="md:block hidden" />
+                  <span className="split-text ms-1">passion crew</span>
+                  <br />
+                </p>
+                <Button
+                  type="buton"
+                  text="Join now >>"
+                  classname="px-14 py-4 md:px-6 bg-white text-primary"
+                />
+              </div>
             </div>
-            <div className="md:col-span-1 col-span-2">
-              <div className="grid grid-cols-3 gap-4">anhr</div>
+            <div className="md:col-span-1 col-span-2 ps-5 md:ps-0 md:px-5 lg:px-0">
+              <div className="grid md:grid-cols-3 grid-cols-4 gap-4">
+                {Array.from({ length: 6 }, (_, index) => (
+                  <div
+                    key={index}
+                    className={`rounded-10 craetor-shadown relative col-span-2 md:col-span-1 ${
+                      index === 0
+                        ? 'bg-violet'
+                        : index === 1
+                        ? 'bg-primary'
+                        : index === 2
+                        ? 'bg-blue hidden md:block'
+                        : index === 3
+                        ? 'bg-yelow'
+                        : index == 4
+                        ? 'bg-green'
+                        : 'bg-oragen hidden md:block'
+                    }`}
+                  >
+                    <img
+                      src={'/images/haho.svg'}
+                      alt=""
+                      className={`w-full relative h-full`}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -169,6 +195,7 @@ export default function Creator({ data }) {
             </div>
           </div>
         </div>
+
         <div className="px-5 lg:px-[112px]">
           <Slider data={data} />
         </div>

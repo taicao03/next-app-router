@@ -1,5 +1,7 @@
 'use client';
 import Button from '@/components/common/ui/button';
+import { motion } from 'framer-motion';
+
 import Slider from '@/components/common/ui/slider-carouce-brand/index';
 const UiBrandsContent = ({ data }) => {
   const creatorConnect = [
@@ -27,8 +29,8 @@ const UiBrandsContent = ({ data }) => {
 
   return (
     <>
-      <div className="lg:mx-[112px] lg:mb-[60px] mt-0 mx-5">
-        <p className="md:text-title_56_64_700 text-title_32_44_700 text-black uppercase">
+      <div className="lg:mx-[112px] lg:my-[120px] my-[60px] mt-0 mx-5">
+        <p className="md:text-title_56_64_700 text-title_32_44_700 text-black uppercase lg:mb-14 mb-8">
           Discover our <br />
           <span className="split-text">
             creator
@@ -38,17 +40,46 @@ const UiBrandsContent = ({ data }) => {
           <br className="lg:hidden" />
           <span className="">compass</span>
         </p>
-        <div className="my-20 md:flex ">
+
+        <div className="grid grid-cols-4 lg:gap-8 gap-4">
           {creatorConnect.map((item, index) => (
             <div
-              className={`group md:w-3/12 cursor-pointer hover md:mb-0 mb-3 px-5 md:py-4 py-6  text-black rounded-3 border-primary border  ${
-                index === 3 ? 'md:me-0' : 'lg:me-8 md:me-4'
+              className={`group cursor-pointer md:col-span-1 col-span-4 px-5 md:py-4 py-6 text-black rounded-3 border-primary border ${
+                index === 2
+                  ? 'relative md:-top-6 md:bg-primary md:text-white'
+                  : ''
               }`}
               key={index}
             >
-              <img src={item?.icon} className="mb-5" alt="" />
-              <h2 className="text-title_20_32_600 mb-1">{item?.title}</h2>
-              <p className="text-gray text-base ">{item?.text}</p>
+              {index === 2 ? (
+                <motion.img
+                  src={`/images/svg/creator_svg/livestream-white.svg`}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
+                  alt="Portfolio project"
+                  whileHover={{ scale: 1.2 }}
+                  className="mb-5"
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                />
+              ) : (
+                <motion.img
+                  src={item?.icon}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
+                  alt="Cover"
+                  whileHover={{ scale: 1.2 }}
+                  className="mb-5"
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                />
+              )}
+              <h2 className={`text-title_20_32_600 mb-1`}>{item?.title}</h2>
+              <p
+                className={`text-gray text-base ${
+                  index === 2 ? 'text-white' : ''
+                } `}
+              >
+                {item?.text}
+              </p>
             </div>
           ))}
         </div>
@@ -198,7 +229,7 @@ const UiBrandsContent = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="lg:px-[112px] pt-9 pb-20 lg:py-32 mx-5">
+      <div className="lg:px-[112px] pt-9 pb-20 lg:py-32">
         <Slider data={data} />
       </div>
     </>

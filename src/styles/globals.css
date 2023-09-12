@@ -59,7 +59,39 @@ body {
   box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   border-radius: 100px;
 }
-
+.popup {
+  background-color: white;
+  border-radius: 24px;
+  border: 1px solid #e4e4e4;
+  position: relative;
+}
+.icon-img::before,
+.icon-img::after {
+  background: radial-gradient(
+    63.86% 63.86% at 36.75% 64.46%,
+    #dc1a5d 0%,
+    #b334bc 75.52%,
+    #9747ff 100%
+  );
+  box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
+}
+.icon-img::after {
+  content: '';
+  top: 85%;
+  left: 25px;
+  border-radius: 100px;
+  position: absolute;
+  background: radial-gradient(
+    63.86% 63.86% at 36.75% 64.46%,
+    #dc1a5d 0%,
+    #b334bc 75.52%,
+    #9747ff 100%
+  );
+  box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
+}
+.custom-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+}
 .main-swiper .swiper-slide .icon-img-slider::after {
   content: '';
   position: absolute;
@@ -363,6 +395,21 @@ textarea::placeholder {
   box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
 }
 
+.craetor-shadown::before {
+  content: '';
+  border-radius: 200px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 70%;
+  bottom: 0;
+}
+
 @media only screen and (min-width: 1500px) {
   .custom .swiper-slide-active img {
     height: 500px !important;
@@ -389,6 +436,7 @@ textarea::placeholder {
     border-radius: 64px 64px 500px 500px;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
   /* CSS dành cho máy tính bảng */
   .custom .swiper-slide-active img {
@@ -458,18 +506,18 @@ textarea::placeholder {
     height: 450px !important;
   }
   .custom .swiper-slide-active {
-    width: 275px !important;
+    width: 60% !important;
     z-index: 10;
-    left: -65px;
+    left: -13%;
     opacity: 1 !important;
   }
   .custom .swiper-slide-prev {
     opacity: 0.2 !important;
     /* right: -130px; */
-    left: -30px;
+    left: -3%;
   }
   .custom .swiper-slide-next {
-    left: -105px;
+    left: -25%;
 
     opacity: 0.3 !important;
   }

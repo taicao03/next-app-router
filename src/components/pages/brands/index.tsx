@@ -38,7 +38,7 @@ const BrandsClient = ({ data }) => {
         <div className="bg-black bg_main w-full">
           <div className="grid grid-cols-4 mx-2.5 py-[120px] md:px-[112px]">
             <div className="md:col-span-2 col-span-4">
-              <p className="uppercase md:mb-9 mb-8 md:text-left px-2.5 md:px-0 text-title_32_44_700 md:text-title_lg text-white">
+              <p className="uppercase md:mb-9 mb-8 md:text-left px-2.5 md:px-0 text-title_32_44_700 lg:text-title_lg text-white">
                 {`we're Proud to be a long-term companion of`}
                 <span className="split-text ms-1">
                   {`vietnam's leading brands`}
