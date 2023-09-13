@@ -51,31 +51,28 @@ const UiBrandsContent = ({ data }) => {
               }`}
               key={index}
             >
-              {index === 2 ? (
-                <motion.img
-                  src={`/images/svg/creator_svg/livestream-white.svg`}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
-                  alt="Portfolio project"
-                  whileHover={{ scale: 1.2 }}
-                  className="mb-5"
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
-                />
-              ) : (
-                <motion.img
-                  src={item?.icon}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
-                  alt="Cover"
-                  whileHover={{ scale: 1.2 }}
-                  className="mb-5"
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
-                />
-              )}
+              <motion.img
+                src={item?.icon}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
+                alt="Cover"
+                whileHover={{ scale: 1.2 }}
+                className={`${index === 2 ? 'md:hidden' : ''} mb-5`}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              />
+              <motion.img
+                src={'/images/svg/creator_svg/livestream-white.svg'}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
+                alt="Cover"
+                whileHover={{ scale: 1.2 }}
+                className={`${index === 2 ? 'md:block hidden' : 'hidden'} mb-5`}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              />
               <h2 className={`text-title_20_32_600 mb-1`}>{item?.title}</h2>
               <p
                 className={`text-gray text-base ${
-                  index === 2 ? 'text-white' : ''
+                  index === 2 ? 'md:text-white text-gray' : ''
                 } `}
               >
                 {item?.text}

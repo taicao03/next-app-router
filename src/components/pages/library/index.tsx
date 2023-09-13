@@ -1,30 +1,58 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/common/nav';
 import { motion } from 'framer-motion';
 import Button from '@/components/common/ui/button';
 import Link from 'next/link';
 import Popup from '@/components/common/ui/popup';
-const LibraryItem = () => {
+import PropTypes from 'prop-types';
+
+const LibraryItem = ({ dataAll }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [isFiled, setFiled] = useState(1);
+  const [detailData, setDetailData] = useState(null);
+  const [isDetail, setDetail] = useState(null);
+  const [isFiled, setFiled] = useState(true);
+
+  const filterCatogory = dataAll.filter((item) => item.type === isFiled);
+
   const handleClick = (data) => {
     setFiled(data);
   };
-  const openPopup = () => {
+  const openPopup = (id) => {
     setIsPopupOpen(true);
+    setDetail(id);
   };
 
   const closePopup = () => {
     setIsPopupOpen(false);
+    setDetail(null);
+    setDetailData(null);
   };
 
   const uiBtn = [
-    { name: 'Fashion', value: 1 },
-    { name: 'Beauty', value: 2 },
-    { name: 'Other', value: 3 },
+    { name: 'Fashion', value: true },
+    { name: 'Beauty', value: false },
+    { name: 'Other', value: true },
   ];
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/${isDetail}`,
+      );
+      const data = await response.json();
+      setDetailData(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  useEffect(() => {
+    if (isPopupOpen === true) {
+      fetchData();
+    }
+  }, [isPopupOpen === true]);
 
   return (
     <>
@@ -62,16 +90,16 @@ const LibraryItem = () => {
           </div>
 
           <div className="grid lg:grid-cols-5 gap-4 grid-cols-2 mb-10 md:mb-11">
-            {Array.from({ length: 10 }, (_, index) => (
+            {filterCatogory.map((item, index) => (
               <div key={index} className="col-span-1 md:col-span-1">
                 <div
                   className="cursor-pointer"
-                  onClick={openPopup}
-                  onKeyDown={closePopup}
+                  onClick={() => openPopup(item?.id)}
+                  onKeyDown={openPopup}
                 >
                   <div className="mb-3 image-container">
                     <motion.img
-                      src="./images/test.jpg"
+                      src={item?.avatar}
                       initial={{ opacity: 0.2, y: 150 }}
                       animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
                       alt="Portfolio project"
@@ -82,7 +110,7 @@ const LibraryItem = () => {
                   </div>
                   <p className="mb-1 text-text_sm md:text-title_20_32_600 text-black">
                     <span className="hover:text-primary hover:underline">
-                      Grey D
+                      {item?.name}
                     </span>
                   </p>
                 </div>
@@ -95,48 +123,32 @@ const LibraryItem = () => {
               </div>
             ))}
           </div>
+
           <div className="flex justify-center">
-            <Button type="buton" text="Submit" classname="px-14 py-4" />
+            <Button type="buton" text="Load more" classname="px-14 py-4" />
           </div>
         </div>
       </motion.div>
-      <Popup isOpen={isPopupOpen} onRequestClose={closePopup}>
+
+      <Popup isOpen={isPopupOpen} onRequestClose={closePopup} data={detailData}>
         <button
           className="bg_close rounded-full p-2 focus-within:bg-primary absolute right-5 top-2 z-10"
           onClick={closePopup}
         >
           <img src="/images/svg/icon/close.svg" className="h-5 w-5" alt="" />
         </button>
-        <div className="grid md:grid-cols-3 grid-cols-2 gap-4">
-          <div className="md:col-span-1 col-span-2">
-            <div className="icon-img relative before:absolute before:content-[''] after:content-['] after:md:h-[48px] after:md:w-[48px]  after:h-[40px] after:w-[40px] before:md:h-[56px] before:md:w-[56px] before:w-[48px] before:h-[48px] before:top-[55%] before:left-[-25px] before:rounded-[100px]">
-              <img
-                src="/images/test.jpg"
-                alt=""
-                className="rounded-b-[500px] lg:h-[488px] h-[415px]"
-              />
-            </div>
-          </div>
-          <div className="md:col-span-2 col-span-2">
-            <h2 className="lg:text-title_44_52_600 text-title_28_36_600 text-black mb-1">
-              Chau Bui
-            </h2>
-            <div>
-              <Link href={'/'} className="text-primary text-base mb-2">
-                @melive.official
-              </Link>
-              <p className="text-gray text-base">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud. Ut enim ad minim veniam,
-                quis nostrud. Ut enim ad minim veniam, quis nostrud.
-              </p>
-            </div>
-          </div>
-        </div>
       </Popup>
     </>
   );
 };
 
 export default LibraryItem;
+LibraryItem.propTypes = {
+  dataAll: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      avatar: PropTypes.string,
+      name: PropTypes.string,
+    }),
+  ),
+};
