@@ -19,7 +19,7 @@ const nextConfig = {
     serverActions: true,
   },
   images: {
-    domains: ['lh3.googleusercontent.com'],
+    domains: ['wygprvxieuhsvccwhice.supabase.co'],
   },
   // i18n,
 };

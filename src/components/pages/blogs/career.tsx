@@ -20,7 +20,7 @@ export default function BlogCareer({ data }) {
               <Link href={`/blogs/${item?.id}`}>
                 <div className="md:mb-8 mb-4 image-container">
                   <motion.img
-                    src={`${process.env.BASE_URL}/${item?.image}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL_2}/${item?.image}`}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
                     alt="Portfolio project"
