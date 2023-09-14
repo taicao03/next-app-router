@@ -10,6 +10,7 @@ import Career from './career';
 // import { addBlog } from '@/app/actions/demoActions/index';
 
 export default function ListItems({ dataBlogs }) {
+  const getDataBlogs = dataBlogs?.data?.results;
   return (
     <>
       <Navbar type={true} />
@@ -24,7 +25,7 @@ export default function ListItems({ dataBlogs }) {
         <div className="lg:px-[112px] px-5">
           <Creator />
           <Brands />
-          <Career data={dataBlogs} />
+          <Career data={getDataBlogs} />
         </div>
 
         {/* <form action={addBlog}>

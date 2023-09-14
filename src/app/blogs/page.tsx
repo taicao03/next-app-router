@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 
 const Portfolio = async () => {
   const data = await getBlogs();
+
   return <>{<ListItems dataBlogs={data} />}</>;
 };
 

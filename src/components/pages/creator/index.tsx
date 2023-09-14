@@ -8,6 +8,7 @@ import SliderCarousel from '@/components/common/ui/slider-carouse-one/index';
 import PropTypes from 'prop-types';
 
 export default function Creator({ data }) {
+  const getDataCreator = data?.data?.results;
   const UIcanOFFER = [
     {
       title: 'Content Direction',
@@ -40,7 +41,6 @@ export default function Creator({ data }) {
   return (
     <>
       <Navbar type={true} />
-
       <motion.div
         animate={{
           opacity: 1,
@@ -64,7 +64,7 @@ export default function Creator({ data }) {
               <Button type="buton" text="See more >>" classname="px-14 py-4" />
             </div>
             <div className="lg:col-span-1 col-span-2 mt-8 md:mt-0">
-              <SliderCarousel data={data} />
+              <SliderCarousel data={getDataCreator} />
             </div>
           </div>
 
@@ -197,7 +197,7 @@ export default function Creator({ data }) {
         </div>
 
         <div className="px-5 lg:px-[112px]">
-          <Slider data={data} />
+          <Slider data={getDataCreator} />
         </div>
       </motion.div>
     </>

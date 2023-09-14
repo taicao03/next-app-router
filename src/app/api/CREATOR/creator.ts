@@ -1,10 +1,21 @@
 'use server';
 
 import { notFound } from 'next/navigation';
-export async function getBlogs() {
-  const res = await fetch(`${process.env.BLOG_API}`, {
+
+export async function getCreator() {
+  const data = {
+    page: 1,
+    limit: 10,
+    fields: {
+      ids: [],
+      category_ids: [],
+    },
+  };
+
+  const res = await fetch(`${process.env.CREATOR_ENDPOINT}`, {
     method: 'POST',
     next: { revalidate: 3600 },
+    body: JSON.stringify(data),
     headers: { 'Content-Type': 'application/json' },
   });
 

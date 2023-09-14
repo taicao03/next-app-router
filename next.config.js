@@ -18,7 +18,9 @@ const nextConfig = {
     appDir: true,
     serverActions: true,
   },
-
+  images: {
+    domains: ['lh3.googleusercontent.com'],
+  },
   // i18n,
 };
 module.exports = nextConfig;

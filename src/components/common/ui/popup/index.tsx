@@ -6,14 +6,13 @@ function Popup({ isOpen, onRequestClose, children, data }) {
   return (
     <ReactModal
       isOpen={isOpen}
-      className="popup z-50 bg-white lg:w-3/4 xxl:w-2/4 mx-5 slide-in-elliptic-top-fwd lg:mx-0 lg:p-52px p-8 focus-within:outline-none relative h-[80vh] md:h-auto md:overflow-y-hidden overflow-y-auto md:top-[55px] top-[52px] lg:top-0"
+      className={`popup z-50 bg-white lg:w-3/4 xxl:w-2/4 mx-5 slide-in-elliptic-top-fwd lg:mx-0 lg:p-52px p-8 focus-within:outline-none relative h-[80vh] md:h-auto md:overflow-y-hidden overflow-y-auto md:top-[55px] top-[52px] lg:top-0`}
       onRequestClose={onRequestClose}
       ariaHideApp={false}
-      overlayClassName="custom-overlay flex h-full w-full top-0 left-0 fixed justify-center items-center"
+      overlayClassName="custom-overlay z-50 flex h-full w-full top-0 left-0 fixed justify-center items-center"
       bodyOpenClassName="overflow-hidden"
       htmlOpenClassName="overflow-hidden"
     >
-      {children}
       <div className="grid md:grid-cols-3 grid-cols-2 gap-8 xxl:gap-[52px]">
         <div className="md:col-span-1 col-span-2">
           <div className="icon-img relative before:absolute before:content-[''] after:content-['] after:md:h-[48px] after:md:w-[48px]  after:h-[40px] after:w-[40px] before:md:h-[56px] before:md:w-[56px] before:w-[48px] before:h-[48px] before:top-[55%] before:left-[-25px] before:rounded-[100px]">
@@ -74,16 +73,8 @@ function Popup({ isOpen, onRequestClose, children, data }) {
             </motion.p>
           </div>
         </div>
-        <div className="col-span-2">
-          <div className="flex justify-between">
-            <div className="flex">
-              <div className=""></div>
-              <div className=""></div>
-            </div>
-            <div className=""></div>
-          </div>
-        </div>
       </div>
+      {children}
     </ReactModal>
   );
 }

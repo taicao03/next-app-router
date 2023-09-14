@@ -7,6 +7,7 @@ import 'swiper/css';
 import { Scrollbar, Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css/scrollbar';
 export default function SliderCarouse({ data }) {
+  console.log(data);
   return (
     <>
       <Swiper
@@ -26,11 +27,11 @@ export default function SliderCarouse({ data }) {
         scrollbar={true}
         pagination={{ clickable: true }}
       >
-        {data.map((item, index) => (
+        {data?.map((item, index) => (
           <SwiperSlide key={index}>
             <motion.img
-              src={item?.avatar}
-              alt={item + index}
+              src={`https://wygprvxieuhsvccwhice.supabase.co/storage/v1/object/public/melive/${item?.image_portrait}`}
+              alt={`Creator`}
               className="mb-[60px] mt-3"
             />
           </SwiperSlide>

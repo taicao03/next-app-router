@@ -101,7 +101,7 @@ const UIHomeClient = () => {
                   key={index}
                 >
                   <img
-                    src="/images/test.jpg"
+                    src={`/images/png/item-${index + 1}.png`}
                     alt=""
                     className="w-full md:h-[196px] h-[120px] rounded-5"
                   />

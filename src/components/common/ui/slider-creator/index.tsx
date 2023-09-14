@@ -47,7 +47,7 @@ export default function SliderCarouse({ data }) {
             }}
             pagination={{ clickable: true }}
           >
-            {data.map((item, index) => (
+            {data?.map((item, index) => (
               <SwiperSlide key={index} className="">
                 <div className="grid grid-cols-3 gap-4">
                   <div className="md:col-span-1 col-span-3 icon-img-slider md:ms-14 md:mb-14">

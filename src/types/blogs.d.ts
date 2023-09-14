@@ -15,3 +15,10 @@ export interface Test {
   age: string;
   description: string;
 }
+
+export interface Creator {
+  fields: {
+    ids: [];
+    category_ids: [];
+  };
+}

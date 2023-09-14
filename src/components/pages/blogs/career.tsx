@@ -3,6 +3,8 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Date from '@/components/common/format/date';
+
 export default function BlogCareer({ data }) {
   const iconCenter = `./images/svg/icon/center-blog.svg`;
   return (
@@ -18,7 +20,7 @@ export default function BlogCareer({ data }) {
               <Link href={`/blogs/${item?.id}`}>
                 <div className="md:mb-8 mb-4 image-container">
                   <motion.img
-                    src="./images/test.jpg"
+                    src={`${process.env.BASE_URL}/${item?.image}`}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
                     alt="Portfolio project"
@@ -32,10 +34,10 @@ export default function BlogCareer({ data }) {
                 </p>
               </Link>
 
-              <div className="flex text-gray text_13_16_600">
+              <div className="flex text-gray text_13_16_600 uppercase">
                 <p>By Metub Team</p>
                 <img src={iconCenter} alt="" className="lg:mx-5 mx-2" />
-                <p>Feb 2023</p>
+                <Date dateString={item?.created_at} />
               </div>
             </div>
           ))}
