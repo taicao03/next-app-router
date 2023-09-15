@@ -41,7 +41,7 @@ export default function ListItems({ dataDetailBlogs }) {
 
           <div className="md:py-16 pt-6 pb-8">
             <img
-              src={`${process.env.NEXT_PUBLIC_API_URL_2}/${getDataBlogsDetail?.image}`}
+              src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${getDataBlogsDetail?.image}`}
               className="rounded-4 h-[255px] md:h-[344px] w-full"
               alt=""
             />

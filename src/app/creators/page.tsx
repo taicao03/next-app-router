@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 const Components = async () => {
   const data = await getCreator();
+  console.log(data);
 
   return (
     <>

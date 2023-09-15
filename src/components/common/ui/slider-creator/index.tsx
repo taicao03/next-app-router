@@ -17,6 +17,8 @@ import 'swiper/css/thumbs';
 import 'swiper/css/navigation';
 
 export default function SliderCarouse({ data }) {
+  console.log(data);
+
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const handleSwiperInit = (swiper) => {
     setThumbsSwiper(swiper);
@@ -52,7 +54,7 @@ export default function SliderCarouse({ data }) {
                 <div className="grid grid-cols-3 gap-4">
                   <div className="md:col-span-1 col-span-3 icon-img-slider md:ms-14 md:mb-14">
                     <img
-                      src={item?.avatar}
+                      src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${item?.image_portrait}`}
                       alt="Hình ảnh 1"
                       className="h-[448px] rounded-t-[36px] rounded-b-[500px]"
                     />
@@ -61,7 +63,7 @@ export default function SliderCarouse({ data }) {
                     <p className="md:text-title_44_58_600 text-title_sm text-black mb-3">
                       {item?.name}
                     </p>
-                    <p className="text-primary mb-4">@melive.official</p>
+                    <p className="text-primary mb-4">{item?.channel}</p>
                     <p className="text-gray text-base_secondary text-trunce-5">
                       {item?.description}
                     </p>
@@ -101,7 +103,7 @@ export default function SliderCarouse({ data }) {
             {data.map((item, index) => (
               <SwiperSlide key={index} className="">
                 <img
-                  src={item?.avatar}
+                  src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${item?.image_portrait}`}
                   className="h-20 w-20 rounded-full"
                   alt="Hình ảnh 1"
                 />

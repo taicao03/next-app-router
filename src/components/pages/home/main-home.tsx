@@ -31,6 +31,8 @@ Section.propTypes = {
 };
 
 export default function Home({ data }) {
+  const getDataCreator = data?.data?.results;
+
   const ref = useRef(null);
   const [isHidden, setIsHidden] = React.useState(false);
   const slideControl = useAnimation();
@@ -68,7 +70,7 @@ export default function Home({ data }) {
         </div>
         {/* Content */}
         <Section>
-          <UICreator data={data} />
+          <UICreator data={getDataCreator} />
         </Section>
         <Section>
           <UIHomeServices />

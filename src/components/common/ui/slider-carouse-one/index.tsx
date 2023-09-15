@@ -19,8 +19,8 @@ export default function SliderCarouse({ data }) {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        centeredSlides={true} // Để ảnh ở giữa lớn hơn
-        centeredSlidesBounds={true} // Đảm bảo cả 3 ảnh đều hiển thị thẳng
+        centeredSlides={true}
+        centeredSlidesBounds={true}
         navigation={{ nextEl: '.carousel-next', prevEl: '.carousel-prev' }}
         loop={true}
         modules={[Scrollbar, Navigation, Pagination, Autoplay]}
@@ -30,7 +30,7 @@ export default function SliderCarouse({ data }) {
         {data?.map((item, index) => (
           <SwiperSlide key={index}>
             <motion.img
-              src={`https://wygprvxieuhsvccwhice.supabase.co/storage/v1/object/public/melive/${item?.image_portrait}`}
+              src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${item?.image_portrait}`}
               alt={`Creator`}
               className="mb-[60px] mt-3"
             />

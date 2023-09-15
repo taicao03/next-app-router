@@ -6,7 +6,13 @@ import { motion } from 'framer-motion';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Scrollbar, Navigation, Pagination, Thumbs } from 'swiper/modules';
+import {
+  Scrollbar,
+  Navigation,
+  Pagination,
+  Thumbs,
+  Autoplay,
+} from 'swiper/modules';
 import 'swiper/css/scrollbar';
 export default function SliderCarouse({ data }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -22,19 +28,23 @@ export default function SliderCarouse({ data }) {
           spaceBetween={0}
           slidesPerView={3}
           allowTouchMove={false}
-          centeredSlides={true} // Để ảnh ở giữa lớn hơn
-          centeredSlidesBounds={true} // Đảm bảo cả 3 ảnh đều hiển thị thẳng
+          centeredSlides={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          centeredSlidesBounds={true}
           navigation={{ nextEl: '.carousel-next', prevEl: '.carousel-prev' }}
           loop={true}
           thumbs={{ swiper: thumbsSwiper }}
-          modules={[Scrollbar, Thumbs, Navigation, Pagination]}
+          modules={[Scrollbar, Thumbs, Navigation, Pagination, Autoplay]}
           scrollbar={true}
           pagination={{ clickable: true }}
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.img
-                src={item?.avatar}
+                src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${item?.image}`}
                 alt={item + index}
                 className="my-[60px]"
               />
@@ -58,7 +68,7 @@ export default function SliderCarouse({ data }) {
           allowTouchMove={false}
           slidesPerView={1}
           onSwiper={handleSwiperInit}
-          modules={[Scrollbar, Navigation, Pagination, Thumbs]}
+          modules={[Scrollbar, Navigation, Pagination, Thumbs, Autoplay]}
         >
           {data.map((item, index) => (
             <SwiperSlide key={index} className="px-5 lg:px-0">
@@ -67,7 +77,7 @@ export default function SliderCarouse({ data }) {
                 href={'/'}
                 className="md:text-base_secondary text_15_28_400 text-primary mb-3"
               >
-                @melive.official
+                {item?.channel}
               </Link>
               <p className="md:text-base_secondary text-gray mb-7 text_15_28_400 text-trunce-5">
                 {item?.description}

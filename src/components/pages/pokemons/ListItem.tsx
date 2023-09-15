@@ -23,6 +23,9 @@ export default function ListItems({
   const fetching = React.useRef(false);
   const [pages, setPages] = React.useState([initialItems]);
   const [total, setTotal] = React.useState(initialTotal);
+
+  console.log(total);
+
   const items = pages.flatMap((page) => page);
 
   const loadMore = async (page: number) => {

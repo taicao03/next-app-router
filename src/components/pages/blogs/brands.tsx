@@ -2,9 +2,11 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Date from '@/components/common/format/date';
 
-export default function BlogBrands() {
+export default function BlogBrands({ data }) {
   const iconCenter = `./images/svg/icon/center-blog.svg`;
+  console.log(data);
 
   return (
     <>
@@ -14,12 +16,12 @@ export default function BlogBrands() {
         </p>
 
         <div className="grid grid-cols-3 gap-4">
-          {Array.from({ length: 3 }, (_, index) => (
-            <div key={index} className="col-span-3 md:col-span-1">
-              <Link href="/" className="cursor-pointer">
-                <div className="md:mb-8 mb-4 image-container">
+          {data.map((item, index) => (
+            <div className="col-span-3 md:col-span-1" key={index}>
+              <Link href={`/blogs/${item?.id}`}>
+                <div className="md:mb-8 mb-4 image-container rounded-lg">
                   <motion.img
-                    src="./images/test.jpg"
+                    src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${item?.image}`}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
                     alt="Portfolio project"
@@ -29,13 +31,14 @@ export default function BlogBrands() {
                   />
                 </div>
                 <p className="text-black text-title_20_28_700 md:mb-3 mb-2 hover:underline hover:text-primary">
-                  The Ultimate Freelance Solution for Businesses
+                  {item?.name}
                 </p>
               </Link>
-              <div className="flex text-gray text_13_16_600">
+
+              <div className="flex text-gray text_13_16_600 uppercase">
                 <p>By Metub Team</p>
                 <img src={iconCenter} alt="" className="lg:mx-5 mx-2" />
-                <p>Feb 2023</p>
+                <Date dateString={item?.created_at} />
               </div>
             </div>
           ))}

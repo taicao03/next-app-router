@@ -16,6 +16,15 @@ export interface Test {
   description: string;
 }
 
+export interface FomatField {
+  page: number;
+  limit: number;
+  // fields: {
+  //   ids: [];
+  //   category_ids: [];
+  // };
+}
+
 export interface Creator {
   fields: {
     ids: [];

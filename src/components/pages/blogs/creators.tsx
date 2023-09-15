@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
-export default function BlogCreators() {
+export default function BlogCreators({ data }) {
+  console.log(data);
   const iconCenter = `./images/svg/icon/center-blog.svg`;
   return (
     <>

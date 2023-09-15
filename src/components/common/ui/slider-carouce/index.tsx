@@ -9,6 +9,7 @@ import 'swiper/css';
 import { Scrollbar, Navigation, Pagination, Thumbs } from 'swiper/modules';
 import 'swiper/css/scrollbar';
 export default function SliderCarouse({ data }) {
+  console.log(data);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const handleSwiperInit = (swiper) => {
     setThumbsSwiper(swiper);
@@ -34,8 +35,8 @@ export default function SliderCarouse({ data }) {
           {data.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.img
-                src={item?.avatar}
-                alt={item + index}
+                src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${item?.image_portrait}`}
+                alt={item?.name}
                 className="my-[60px]"
               />
             </SwiperSlide>
@@ -67,7 +68,7 @@ export default function SliderCarouse({ data }) {
                 href={'/'}
                 className="md:text-base_secondary text_15_28_400 text-primary mb-3"
               >
-                @melive.official
+                {item?.channel}
               </Link>
               <p className="md:text-base_secondary text-gray mb-7 text_15_28_400 text-trunce-5">
                 {item?.description}

@@ -9,12 +9,14 @@ import Popup from '@/components/common/ui/popup';
 import PropTypes from 'prop-types';
 
 const LibraryItem = ({ dataAll }) => {
+  const getData = dataAll?.data?.results;
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [detailData, setDetailData] = useState(null);
   const [isDetail, setDetail] = useState(null);
   const [isFiled, setFiled] = useState(true);
 
-  const filterCatogory = dataAll.filter((item) => item.type === isFiled);
+  // const filterCatogory = dataAll.filter((item) => item.type === isFiled);
 
   const handleClick = (data) => {
     setFiled(data);
@@ -38,8 +40,24 @@ const LibraryItem = ({ dataAll }) => {
 
   const fetchData = async () => {
     try {
+      const data1 = {
+        page: 1,
+        limit: 10,
+        fields: {
+          ids: [],
+          category_ids: [],
+        },
+      };
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/${isDetail}`,
+        `${process.env.NEXT_PUBLIC_API_URL_CATEGORIES}/${isDetail}`,
+        {
+          method: 'POST',
+          body: JSON.stringify(data1),
+          headers: {
+            Accept: 'application/json ,text/plain',
+            'Content-Type': 'application/json',
+          },
+        },
       );
       const data = await response.json();
       setDetailData(data);
@@ -90,7 +108,7 @@ const LibraryItem = ({ dataAll }) => {
           </div>
 
           <div className="grid lg:grid-cols-5 gap-4 grid-cols-2 mb-10 md:mb-11">
-            {filterCatogory.map((item, index) => (
+            {getData.map((item, index) => (
               <div key={index} className="col-span-1 md:col-span-1">
                 <div
                   className="cursor-pointer"
@@ -99,10 +117,10 @@ const LibraryItem = ({ dataAll }) => {
                 >
                   <div className="mb-3 image-container">
                     <motion.img
-                      src={item?.avatar}
+                      src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${item?.image_square}`}
                       initial={{ opacity: 0.2, y: 150 }}
                       animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
-                      alt="Portfolio project"
+                      alt={item?.name}
                       whileHover={{ scale: 1.2 }}
                       className="h-[162px] md:h-[216px] rounded-lg w-full"
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -118,7 +136,7 @@ const LibraryItem = ({ dataAll }) => {
                   href={'/'}
                   className="text-primary text-text_13_16_400 md:text-base"
                 >
-                  @chaubui.official
+                  {item?.channel}
                 </Link>
               </div>
             ))}

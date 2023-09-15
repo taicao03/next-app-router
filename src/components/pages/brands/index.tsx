@@ -4,6 +4,7 @@ import Button from '@/components/common/ui/button';
 import UiBrandsContent from './content';
 
 const BrandsClient = ({ data }) => {
+  const getDataBrands = data?.data?.results;
   const itemSocial = [
     {
       icon: '/images/svg/icon/social-isn.svg',
@@ -94,7 +95,7 @@ const BrandsClient = ({ data }) => {
         </div>
       </div>
       {/* content */}
-      <UiBrandsContent data={data} />
+      <UiBrandsContent data={getDataBrands} />
     </div>
   );
 };

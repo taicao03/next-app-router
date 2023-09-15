@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 export async function getCreator() {
   const data = {
     page: 1,
-    limit: 10,
+    limit: 100,
     fields: {
       ids: [],
       category_ids: [],
@@ -26,7 +26,7 @@ export async function getCreator() {
   return res.json();
 }
 
-export async function getDetailBlogs({ slug }) {
+export async function getDetailCreator({ slug }) {
   const res = await fetch(`${process.env.BLOG_API}/${slug}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

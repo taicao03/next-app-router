@@ -18,9 +18,9 @@ export default function BlogCareer({ data }) {
           {data.map((item, index) => (
             <div className="col-span-3 md:col-span-1" key={index}>
               <Link href={`/blogs/${item?.id}`}>
-                <div className="md:mb-8 mb-4 image-container">
+                <div className="md:mb-8 mb-4 image-container rounded-lg">
                   <motion.img
-                    src={`${process.env.NEXT_PUBLIC_API_URL_2}/${item?.image}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${item?.image}`}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
                     alt="Portfolio project"

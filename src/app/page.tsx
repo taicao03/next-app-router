@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 import Children from '@/components/pages/home/main-home';
-import { getTest } from '@/app/api/free/free';
-
+import { getCreator } from '@/app/api/CREATOR/creator';
 export const metadata: Metadata = {
   title: 'Trang chủ',
   description: 'Welcome to my portfolio page!',
 };
 
 const PageHome = async () => {
-  const data = await getTest();
+  const data = await getCreator();
 
   return (
     <>
