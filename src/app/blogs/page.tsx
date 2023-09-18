@@ -1,3 +1,4 @@
+import { montserrat } from '@/app/fonts';
 import type { Metadata } from 'next';
 import ListItems from '@/components/pages/blogs/Listitem';
 import {
@@ -16,7 +17,7 @@ const Portfolio = async () => {
   const dataBrands = await getBlogsBrands();
 
   return (
-    <>
+    <div className={montserrat.className}>
       {
         <ListItems
           dataCreator={dataCreator}
@@ -24,7 +25,7 @@ const Portfolio = async () => {
           dataBrands={dataBrands}
         />
       }
-    </>
+    </div>
   );
 };
 

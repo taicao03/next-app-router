@@ -1,13 +1,8 @@
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
 //* Components
 import Footer from '@/components/common/footer';
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '600', '500', '700'],
-});
+import { poppins } from '@/app/fonts';
 
 export const metadata: Metadata = {
   title: 'Metub creator blog',

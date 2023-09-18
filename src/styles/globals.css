@@ -26,6 +26,8 @@ body {
     rgb(var(--background-start-rgb)); */
   font-family: 'Montserrat';
   background-color: white;
+  /* font-family: 'Borel', cursive; */
+  font-family: 'Poppins', sans-serif;
 }
 
 .image-container {
