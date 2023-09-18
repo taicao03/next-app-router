@@ -5,6 +5,7 @@ import Button from '@/components/common/ui/button';
 import Slider from '@/components/common/ui/slider-creator/SliderCarouse';
 import SliderCarousel from '@/components/common/ui/slider-carouse-one/index';
 import PropTypes from 'prop-types';
+import RotatingText from '@/components/pages/home/rotating-text';
 
 export default function Creator({ data }) {
   const getDataCreator = data?.data?.results;
@@ -182,17 +183,21 @@ export default function Creator({ data }) {
           </div>
         </div>
 
-        <div className="lg:px-[112px] px-5 py-20">
+        <div className="lg:px-[216px] px-5 py-20">
           <div className="grid grid-cols-2 gap-4">
             <div className="md:col-span-1 col-span-2">
               <p className="uppercase md:mb-9 text-left mb-8 md:px-0 text-title_44_53_700 lg:text-title_lg text-black">
-                UNLOCK THE POWER OF
+                UNLOCK THE <br className="md:block xxl:hidden" /> POWER OF
                 <br />
-                <span className="split-text">YOUR PASSION</span>
+                <span className="split-text">
+                  YOUR <br className="md:block xxl:hidden" /> PASSION
+                </span>
                 <br />
               </p>
             </div>
-            <div className="md:col-span-1 col-span-2"></div>
+            <div className="md:col-span-1 col-span-2 relative md:h-auto h-[200px] mb-[90px] md:mb-0">
+              <RotatingText />
+            </div>
           </div>
         </div>
 

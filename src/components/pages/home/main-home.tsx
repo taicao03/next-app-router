@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import UICreator from '@/components/pages/home/creator';
 import UIHomeServices from '@/components/pages/home/services';
 import UIHomeClient from '@/components/pages/home/clients';
-import RotatingText from '@/components/pages/home/rotating-text';
 
 function Section({ children }) {
   const ref = useRef(null);
@@ -69,7 +68,6 @@ export default function Home({ data }) {
             />
           </video>
         </div>
-        <RotatingText />
         {/* Content */}
         <Section>
           <UICreator data={getDataCreator} />

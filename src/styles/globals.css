@@ -50,9 +50,10 @@ body {
   background: radial-gradient(
     63.86% 63.86% at 36.75% 64.46%,
     #dc1a5d 0%,
-    #b334bc 75.52%,
-    #9747ff 100%
+    #e5608e 75.52%,
+    #e54d82 100%
   );
+
   box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   border-radius: 100px;
   -webkit-animation: tilt-in-fwd-bl 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
@@ -310,12 +311,12 @@ body {
   background: radial-gradient(
     63.86% 63.86% at 36.75% 64.46%,
     #dc1a5d 0%,
-    #b334bc 75.52%,
-    #9747ff 100%
+    #e5608e 75.52%,
+    #e54d82 100%
   );
+  box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   z-index: 99;
 
-  box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   -webkit-animation: bounce-in-top 1.3s both;
   animation: bounce-in-top 1.3s both;
 }
@@ -329,8 +330,8 @@ body {
   background: radial-gradient(
     63.86% 63.86% at 36.75% 64.46%,
     #dc1a5d 0%,
-    #b334bc 75.52%,
-    #9747ff 100%
+    #e5608e 75.52%,
+    #e54d82 100%
   );
   box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   -webkit-animation: bounce-in-left 1.5s both;
@@ -346,8 +347,8 @@ body {
   background: radial-gradient(
     63.86% 63.86% at 36.75% 64.46%,
     #dc1a5d 0%,
-    #b334bc 75.52%,
-    #9747ff 100%
+    #e5608e 75.52%,
+    #e54d82 100%
   );
   box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   border-radius: 100px;
@@ -701,8 +702,8 @@ textarea::placeholder {
   background: radial-gradient(
     63.86% 63.86% at 36.75% 64.46%,
     #dc1a5d 0%,
-    #b334bc 75.52%,
-    #9747ff 100%
+    #e5608e 75.52%,
+    #e54d82 100%
   );
   box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   -webkit-animation: slide-in-blurred-br 0.6s cubic-bezier(0.23, 1, 0.32, 1)
@@ -869,8 +870,8 @@ textarea::placeholder {
   background: radial-gradient(
     63.86% 63.86% at 36.75% 64.46%,
     #dc1a5d 0%,
-    #b334bc 75.52%,
-    #9747ff 100%
+    #e5608e 75.52%,
+    #e54d82 100%
   );
   box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   -webkit-animation: bounce-top 0.9s both;
@@ -896,6 +897,40 @@ textarea::placeholder {
 .swiper-button-disabled {
   pointer-events: none;
 }
+
+.custom .swiper-slide-active::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  top: 0;
+  left: 15px;
+  position: absolute;
+  border-radius: 100px;
+  background: radial-gradient(
+    63.86% 63.86% at 36.75% 64.46%,
+    #dc1a5d 0%,
+    #e5608e 75.52%,
+    #e54d82 100%
+  );
+  box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
+}
+.custom .swiper-slide-active::before {
+  content: '';
+  width: 48px;
+  height: 48px;
+  bottom: 40px;
+  right: 0;
+  position: absolute;
+  border-radius: 100px;
+  background: radial-gradient(
+    63.86% 63.86% at 36.75% 64.46%,
+    #dc1a5d 0%,
+    #e5608e 75.52%,
+    #e54d82 100%
+  );
+  box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
+}
+
 @media only screen and (min-width: 1500px) {
   .custom .swiper-slide-active img {
     height: 500px !important;
@@ -964,8 +999,8 @@ textarea::placeholder {
     background: radial-gradient(
       63.86% 63.86% at 36.75% 64.46%,
       #dc1a5d 0%,
-      #b334bc 75.52%,
-      #9747ff 100%
+      #e5608e 75.52%,
+      #e54d82 100%
     );
     box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   }
@@ -980,8 +1015,8 @@ textarea::placeholder {
     background: radial-gradient(
       63.86% 63.86% at 36.75% 64.46%,
       #dc1a5d 0%,
-      #b334bc 75.52%,
-      #9747ff 100%
+      #e5608e 75.52%,
+      #e54d82 100%
     );
     box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   }
@@ -1055,13 +1090,6 @@ textarea::placeholder {
     left: 15px;
     position: absolute;
     border-radius: 100px;
-    background: radial-gradient(
-      63.86% 63.86% at 36.75% 64.46%,
-      #dc1a5d 0%,
-      #b334bc 75.52%,
-      #9747ff 100%
-    );
-    box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   }
   .custom .swiper-slide-active::before {
     content: '';
@@ -1071,13 +1099,6 @@ textarea::placeholder {
     right: 0;
     position: absolute;
     border-radius: 100px;
-    background: radial-gradient(
-      63.86% 63.86% at 36.75% 64.46%,
-      #dc1a5d 0%,
-      #b334bc 75.52%,
-      #9747ff 100%
-    );
-    box-shadow: 0px 12px 12px 0px rgba(220, 26, 93, 0.25);
   }
 }
 
