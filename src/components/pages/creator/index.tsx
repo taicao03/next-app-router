@@ -2,9 +2,8 @@
 import Navbar from '@/components/common/nav';
 import { motion } from 'framer-motion';
 import Button from '@/components/common/ui/button';
-import Slider from '@/components/common/ui/slider-creator/index';
+import Slider from '@/components/common/ui/slider-creator/SliderCarouse';
 import SliderCarousel from '@/components/common/ui/slider-carouse-one/index';
-
 import PropTypes from 'prop-types';
 
 export default function Creator({ data }) {
@@ -193,10 +192,11 @@ export default function Creator({ data }) {
                 <br />
               </p>
             </div>
+            <div className="md:col-span-1 col-span-2"></div>
           </div>
         </div>
 
-        <div className="px-5 lg:px-[112px]">
+        <div className="lg:px-[112px] pb-[60px] md:pb-[112px]">
           <Slider data={getDataCreator} />
         </div>
       </motion.div>

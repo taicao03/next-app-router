@@ -132,6 +132,18 @@ const config: Config = {
             fontWeight: '600',
           },
         ],
+        text_14_20: [
+          '14px',
+          {
+            lineHeight: '20px',
+          },
+        ],
+        text_16_24: [
+          '16px',
+          {
+            lineHeight: '24px',
+          },
+        ],
         text_13_16_600: [
           '13px',
           {
