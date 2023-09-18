@@ -25,7 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
   background-color: white;
-  font-family: 'Borel', cursive;
+  /* font-family: 'Borel', cursive; */
   font-family: 'Poppins', sans-serif;
 }
 
