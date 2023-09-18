@@ -2,15 +2,10 @@
 
 import type { FomatField } from '@/types/blogs';
 import { revalidateTag } from 'next/cache';
-import type { NextApiRequest, NextApiResponse } from 'next';
-export const fieldslibrary = async (
-  req: NextApiRequest,
-  res: NextApiResponse,
-) => {
+export const fieldslibrary = async () => {
   const page = 1;
   const limit = 100;
 
-  console.log(res);
   // const avatar = e.get('avatar')?.toString();
   if (!page || !limit) return;
 

@@ -65,7 +65,7 @@ export default function ListItems({ dataDetailBlogs }) {
                 <div className="flex items-center mb-3">
                   <button
                     type="button"
-                    className="bg-white border border-border md:p-5 p-2.5 rounded-full"
+                    className="bg-white border border-border md:p-4 p-2.5 rounded-full"
                   >
                     <img src="/images/svg/icon/chevron-left.svg" alt="" />
                   </button>
@@ -87,7 +87,7 @@ export default function ListItems({ dataDetailBlogs }) {
                   </p>
                   <button
                     type="button"
-                    className="bg-primary md:p-5 p-2.5 rounded-full"
+                    className="bg-primary md:p-4 p-2.5 rounded-full"
                   >
                     <img src="/images/svg/icon/chevron-right.svg" alt="" />
                   </button>

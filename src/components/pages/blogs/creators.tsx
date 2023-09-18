@@ -38,7 +38,7 @@ export default function BlogCreators({ data }) {
           </div>
 
           <div className="gap-4 col-span-3 lg:col-span-1 md:col-span-3 mb-0 md:block hidden">
-            {Array.from({ length: 4 }, (_, index) => (
+            {Array.from({ length: 5 }, (_, index) => (
               <div className="grid grid-cols-5 gap-4" key={index}>
                 <div className="md:col-span-1 lg:col-span-2 col-span-5">
                   <Link href="/" className="cursor-pointer">
@@ -79,7 +79,7 @@ export default function BlogCreators({ data }) {
           {/* MOBILE */}
           <div className="gap-4 col-span-3 lg:col-span-1 md:col-span-3 mb-0 md:hidden">
             <Swiper slidesPerView={1.3} spaceBetween={20}>
-              {Array.from({ length: 4 }, (_, index) => (
+              {Array.from({ length: 5 }, (_, index) => (
                 <SwiperSlide key={index}>
                   <div className="grid grid-cols-4 gap-4">
                     <div className="md:col-span-1 lg:col-span-2 col-span-4">

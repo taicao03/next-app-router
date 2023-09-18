@@ -16,6 +16,13 @@ export interface Test {
   description: string;
 }
 
+export interface Contact {
+  name: string;
+  avatar: string;
+  age: string;
+  description: string;
+}
+
 export interface FomatField {
   page: number;
   limit: number;

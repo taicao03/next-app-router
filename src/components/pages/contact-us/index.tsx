@@ -7,6 +7,8 @@ import Input from '@/components/common/ui/input';
 import Button from '@/components/common/ui/button';
 import TextArea from '@/components/common/ui/textArea';
 import Select from '@/components/common/ui/select';
+import { createContact } from '@/app/actions/contact/index';
+
 const Item = () => {
   const [isActiveContact, setActiveContact] = useState(true);
   const handleClick = (data) => {
@@ -54,7 +56,7 @@ const Item = () => {
             >{`Brand/Partner`}</div>
           </div>
 
-          <form action="">
+          <form action={createContact}>
             <div className="grid grid-cols-4 gap-8">
               <Input
                 label="Your name"

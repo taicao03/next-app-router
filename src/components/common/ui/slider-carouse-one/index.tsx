@@ -7,7 +7,6 @@ import 'swiper/css';
 import { Scrollbar, Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css/scrollbar';
 export default function SliderCarouse({ data }) {
-  console.log(data);
   return (
     <>
       <Swiper

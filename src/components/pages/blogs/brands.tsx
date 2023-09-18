@@ -6,7 +6,6 @@ import Date from '@/components/common/format/date';
 
 export default function BlogBrands({ data }) {
   const iconCenter = `./images/svg/icon/center-blog.svg`;
-  console.log(data);
 
   return (
     <>

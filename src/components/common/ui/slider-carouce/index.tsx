@@ -9,7 +9,6 @@ import 'swiper/css';
 import { Scrollbar, Navigation, Pagination, Thumbs } from 'swiper/modules';
 import 'swiper/css/scrollbar';
 export default function SliderCarouse({ data }) {
-  console.log(data);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const handleSwiperInit = (swiper) => {
     setThumbsSwiper(swiper);

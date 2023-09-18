@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import {
   Scrollbar,
   Navigation,
@@ -11,8 +12,6 @@ import {
 import Link from 'next/link';
 
 export default function SliderCarouse({ data }) {
-  console.log(data);
-
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const handleSwiperInit = (swiper) => {
     setThumbsSwiper(swiper);
@@ -24,8 +23,8 @@ export default function SliderCarouse({ data }) {
         <div className="col-span-4">
           <Swiper
             className="main-swiper"
-            loop={true}
-            allowTouchMove={false}
+            loop={false}
+            allowTouchMove={true}
             spaceBetween={10}
             navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}
             slidesPerView={1}
@@ -39,7 +38,7 @@ export default function SliderCarouse({ data }) {
               Autoplay,
             ]}
             autoplay={{
-              delay: 4000,
+              delay: 5000,
               disableOnInteraction: false,
             }}
             pagination={{ clickable: true }}
@@ -55,11 +54,13 @@ export default function SliderCarouse({ data }) {
                     />
                   </div>
                   <div className="md:col-span-2 col-span-3 mt-[35px] md:mt-0">
-                    <p className="md:text-title_44_58_600 text-title_sm text-black mb-3">
+                    <p className="md:text-title_44_58_600 text-title_sm text-black mb-3 text-name">
                       {item?.name}
                     </p>
-                    <p className="text-primary mb-4">{item?.channel}</p>
-                    <p className="text-gray text-base_secondary text-trunce-5 md:mb-[24px] mb-4">
+                    <p className="text-primary mb-4 text-channel">
+                      {item?.channel}
+                    </p>
+                    <p className="text-gray text-base_secondary text-trunce-5 md:mb-[24px] mb-4 text-des">
                       {item?.description}
                     </p>
                     <Link
@@ -75,11 +76,11 @@ export default function SliderCarouse({ data }) {
           </Swiper>
         </div>
         <div className="md:col-span-1 hidden md:block"></div>
-        <div className="md:col-span-3 col-span-4 slider-creator-nav-main  md:mx-[90px] mx-[50px]">
+        <div className="md:col-span-3 col-span-4 slider-creator-nav-main  md:mx-[90px] mx-[80px] lg:ms-[150px]">
           <Swiper
             onSwiper={handleSwiperInit}
             className="slider-creator-nav"
-            loop={true}
+            loop={false}
             allowTouchMove={false}
             freeMode={false}
             navigation={false}
@@ -100,16 +101,19 @@ export default function SliderCarouse({ data }) {
             pagination={{ clickable: true }}
           >
             {data.map((item, index) => (
-              <SwiperSlide key={index} className="md:mt-[50px] mt-[25px]">
+              <SwiperSlide
+                key={index}
+                className="md:mt-[50px] mt-[25px] pointer-events-none"
+              >
                 <img
                   src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${item?.image_portrait}`}
-                  className="h-20 w-20 rounded-full mx-auto cursor-pointer"
+                  className="h-20 w-20 rounded-full mx-auto cursor-pointer pointer-events-auto"
                   alt="Hình ảnh 1"
                 />
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="text-black custom-prev absolute md:top-[50%] top-[40%] -left-[35px]">
+          <div className="text-black custom-prev absolute md:top-[50%] md:-left-[55px] top-[40%] -left-[65px]">
             <button
               type="button"
               className="p-2.5 rounded-full bg-white border border-border"
@@ -117,7 +121,7 @@ export default function SliderCarouse({ data }) {
               <img src="/images/svg/icon/chevron-left.svg" alt="" />
             </button>
           </div>
-          <div className="text-black custom-next absolute md:top-[50%] md:-right-[50px] top-[40%] -right-[35px]">
+          <div className="text-black custom-next absolute md:top-[50%] md:-right-[50px] top-[40%] -right-[65px]">
             <button type="button" className="bg-primary p-2.5 rounded-full">
               <img src="/images/svg/icon/chevron-right.svg" alt="" />
             </button>

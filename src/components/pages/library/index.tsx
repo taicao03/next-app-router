@@ -40,25 +40,19 @@ const LibraryItem = ({ dataAll }) => {
 
   const fetchData = async () => {
     try {
-      const data1 = {
-        page: 1,
-        limit: 10,
-        fields: {
-          ids: [],
-          category_ids: [],
-        },
-      };
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL_CATEGORIES}/${isDetail}`,
         {
           method: 'POST',
-          body: JSON.stringify(data1),
+          mode: 'no-cors',
+          redirect: 'follow',
           headers: {
-            Accept: 'application/json ,text/plain',
+            'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
           },
         },
       );
+
       const data = await response.json();
       setDetailData(data);
     } catch (error) {
@@ -115,7 +109,7 @@ const LibraryItem = ({ dataAll }) => {
                   onClick={() => openPopup(item?.id)}
                   onKeyDown={openPopup}
                 >
-                  <div className="mb-3 image-container">
+                  <div className="mb-3 image-container rounded-lg">
                     <motion.img
                       src={`${process.env.NEXT_PUBLIC_API_URL_BASE}/${item?.image_square}`}
                       initial={{ opacity: 0.2, y: 150 }}

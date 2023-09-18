@@ -14,6 +14,8 @@ export default function ListItems({ dataCreator, dataCreer, dataBrands }) {
   const getDataCreer = dataCreer?.data?.results;
   const getDataBrands = dataBrands?.data?.results;
 
+  console.log(getDataCreator);
+
   return (
     <>
       <Navbar type={true} />

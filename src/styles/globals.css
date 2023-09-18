@@ -24,9 +24,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
+  font-family: 'Montserrat';
   background-color: white;
-  font-family: 'Borel', cursive;
-  font-family: 'Poppins', sans-serif;
 }
 
 .image-container {
@@ -892,7 +891,9 @@ textarea::placeholder {
   -webkit-animation: bounce-top 0.9s both;
   animation: bounce-top 0.9s both;
 }
-
+.swiper-button-disabled {
+  pointer-events: none;
+}
 @media only screen and (min-width: 1500px) {
   .custom .swiper-slide-active img {
     height: 500px !important;

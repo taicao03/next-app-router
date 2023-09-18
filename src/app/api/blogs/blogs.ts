@@ -62,10 +62,11 @@ export async function getBlogsBrands() {
 
   return res.json();
 }
+
 export async function getBlogsCreator() {
   const data = {
     page: 1,
-    limit: 3,
+    limit: 4,
     fields: {
       ids: [],
       category_ids: ['78820b37-36c0-4e3e-8938-0311a52cc2ce'],
